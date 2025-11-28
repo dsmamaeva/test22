@@ -4,380 +4,266 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЛВТ | Промышленные печи</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.google.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #2a2e3a; color: #ffffff; }
-        .font-display { font-family: 'Bebas Neue', sans-serif; }
-        .font-script { font-family: 'Dancing Script', cursive; }
-        .clip-path-polygon { clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%); }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
-  }
-}
-</script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="overflow-x-hidden">
-
+<body>
     <!-- Header -->
-    <header class="w-full bg-black/90 text-white sticky top-0 z-50 border-b border-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <div class="w-10 h-10 bg-white text-black flex items-center justify-center rounded clip-path-polygon">
-                        <i data-lucide="hexagon" class="w-7 h-7 stroke-[2.5px]"></i>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i data-lucide="hexagon" class="logo-hexagon"></i>
                     </div>
-                    <span class="font-display text-3xl tracking-wide">AVT</span>
+                    <span class="logo-text">AVT</span>
                 </div>
 
                 <!-- Desktop Nav -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Каталог</a>
-                        <a href="#" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Решения</a>
-                        <a href="#" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
-                        <a href="#" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
-                        <a href="#" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
-                    </div>
-                </div>
+                <nav class="nav-desktop">
+                    <a href="#" class="nav-link">Каталог</a>
+                    <a href="#" class="nav-link">Решения</a>
+                    <a href="#" class="nav-link">Сервис</a>
+                    <a href="#" class="nav-link">О нас</a>
+                    <a href="#" class="nav-link">Контакты</a>
+                </nav>
 
                 <!-- Mobile menu button -->
-                <div class="-mr-2 flex md:hidden">
-                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <i id="icon-menu" data-lucide="menu" class="w-6 h-6"></i>
-                        <i id="icon-close" data-lucide="x" class="hidden w-6 h-6"></i>
-                    </button>
-                </div>
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <span class="sr-only">Open main menu</span>
+                    <i id="icon-menu" data-lucide="menu" class="menu-icon"></i>
+                    <i id="icon-close" data-lucide="x" class="menu-icon close-icon"></i>
+                </button>
             </div>
         </div>
 
         <!-- Mobile Nav -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Каталог</a>
-                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Решения</a>
-                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Сервис</a>
-                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">О нас</a>
-                <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Контакты</a>
+        <nav id="mobile-menu" class="mobile-menu">
+            <div class="mobile-menu-inner">
+                <a href="#" class="mobile-nav-link">Каталог</a>
+                <a href="#" class="mobile-nav-link">Решения</a>
+                <a href="#" class="mobile-nav-link">Сервис</a>
+                <a href="#" class="mobile-nav-link">О нас</a>
+                <a href="#" class="mobile-nav-link">Контакты</a>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main>
         <!-- Catalog Grid -->
-        <section class="container mx-auto px-4 py-12">
-            <!-- 
-              Grid Layout Logic:
-              Desktop (lg): 6 column grid. 
-                - Row 1: 2 items spanning 3 cols each (50% width).
-                - Row 2: 3 items spanning 2 cols each (33.3% width).
-              Tablet (md): 2 column grid.
-              Mobile: 1 column grid.
-            -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-                
-                <!-- Row 1: Large Tiles -->
-                <div class="relative group overflow-hidden bg-gray-900 lg:col-span-3 h-[350px]">
-                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/iNtpTKAmN6.png" alt="Лабораторные печи" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 group-hover:from-black/80 group-hover:to-black/50 transition-colors duration-300"></div>
-                    <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-center items-start text-left pl-8 md:pl-12">
-                        <h3 class="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.9] text-white uppercase tracking-wider drop-shadow-lg">
-                            <span class="block mb-1">Лабораторные</span>
-                            <span class="block mb-1">печи</span>
-                        </h3>
-                    </div>
-                </div>
+        <section class="catalog-section">
+            <div class="container">
+                <div class="catalog-grid">
+                    <!-- Row 1: Large Tiles -->
+                    <article class="catalog-item large-item item-1">
+                        <div class="item-image" data-image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/iNtpTKAmN6.png"></div>
+                        <div class="item-overlay"></div>
+                        <div class="item-content left-aligned">
+                            <h3 class="item-title">
+                                <span class="title-line">Лабораторные</span>
+                                <span class="title-line">печи</span>
+                            </h3>
+                        </div>
+                    </article>
 
-                <div class="relative group overflow-hidden bg-gray-900 lg:col-span-3 h-[350px]">
-                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/87BNZdmpsg.png" alt="Сервисное обслуживание" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 group-hover:from-black/80 group-hover:to-black/50 transition-colors duration-300"></div>
-                    <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-center items-start text-left pl-8 md:pl-12">
-                        <h3 class="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.9] text-white uppercase tracking-wider drop-shadow-lg">
-                            <span class="block mb-1">Сервисное</span>
-                            <span class="block mb-1">обслуживание</span>
-                        </h3>
-                    </div>
-                </div>
+                    <article class="catalog-item large-item item-2">
+                        <div class="item-image" data-image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/87BNZdmpsg.png"></div>
+                        <div class="item-overlay"></div>
+                        <div class="item-content left-aligned">
+                            <h3 class="item-title">
+                                <span class="title-line">Сервисное</span>
+                                <span class="title-line">обслуживание</span>
+                            </h3>
+                        </div>
+                    </article>
 
-                <!-- Row 2: Medium Tiles -->
-                <div class="relative group overflow-hidden bg-gray-900 lg:col-span-2 h-[350px]">
-                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/fFKOob8vHA.png" alt="Промышленные печи" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 group-hover:from-black/80 group-hover:to-black/50 transition-colors duration-300"></div>
-                    <div class="absolute inset-0 p-6 md:p-8 flex flex-col items-center text-center pt-8 md:pt-10">
-                        <h3 class="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.9] text-white uppercase tracking-wider drop-shadow-lg">
-                            <span class="block mb-1">Промышленные печи</span>
-                        </h3>
-                    </div>
-                </div>
+                    <!-- Row 2: Medium Tiles -->
+                    <article class="catalog-item medium-item item-3">
+                        <div class="item-image" data-image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/fFKOob8vHA.png"></div>
+                        <div class="item-overlay"></div>
+                        <div class="item-content center-aligned">
+                            <h3 class="item-title">
+                                <span class="title-line">Промышленные печи</span>
+                            </h3>
+                        </div>
+                    </article>
 
-                <div class="relative group overflow-hidden bg-gray-900 lg:col-span-2 h-[350px]">
-                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/aZNxtrQAOf.png" alt="Туннельные печи" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 group-hover:from-black/80 group-hover:to-black/50 transition-colors duration-300"></div>
-                    <div class="absolute inset-0 p-6 md:p-8 flex flex-col items-center text-center pt-8 md:pt-10">
-                        <h3 class="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.9] text-white uppercase tracking-wider drop-shadow-lg">
-                            <span class="block mb-1">Туннельные печи</span>
-                        </h3>
-                    </div>
-                </div>
+                    <article class="catalog-item medium-item item-4">
+                        <div class="item-image" data-image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/aZNxtrQAOf.png"></div>
+                        <div class="item-overlay"></div>
+                        <div class="item-content center-aligned">
+                            <h3 class="item-title">
+                                <span class="title-line">Туннельные печи</span>
+                            </h3>
+                        </div>
+                    </article>
 
-                <div class="relative group overflow-hidden bg-gray-900 lg:col-span-2 h-[350px]">
-                    <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/CpBzd9A9Sv.png" alt="Высокотемпературные печи" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 group-hover:from-black/80 group-hover:to-black/50 transition-colors duration-300"></div>
-                    <div class="absolute inset-0 p-6 md:p-8 flex flex-col items-center text-center pt-8 md:pt-10">
-                        <h3 class="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.9] text-white uppercase tracking-wider drop-shadow-lg">
-                            <span class="block mb-1">Высокотемпературные печи</span>
-                        </h3>
-                    </div>
+                    <article class="catalog-item medium-item item-5">
+                        <div class="item-image" data-image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/CpBzd9A9Sv.png"></div>
+                        <div class="item-overlay"></div>
+                        <div class="item-content center-aligned">
+                            <h3 class="item-title">
+                                <span class="title-line">Высокотемпературные печи</span>
+                            </h3>
+                        </div>
+                    </article>
                 </div>
-
             </div>
         </section>
 
         <!-- Mission -->
-        <section class="container mx-auto px-4 py-16 text-center">
-            <div class="relative inline-block mb-12">
-                <span class="absolute -top-10 -left-6 md:-left-12 font-script text-4xl md:text-5xl text-gray-400 rotate-[-15deg]">
-                    за
-                </span>
-                <h2 class="font-display text-4xl md:text-6xl lg:text-7xl uppercase tracking-wide">
-                    Мы — развитие промышленности России
-                </h2>
-            </div>
-            
-            <div class="relative mt-12 mb-16">
-                <h3 class="text-xl md:text-2xl text-gray-300 font-light mb-8">
-                    Почему выбирают нас
-                </h3>
-                <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-main">
+                        <span class="mission-decor">за</span>
+                        <h2 class="mission-title">Мы — развитие промышленности России</h2>
+                    </div>
+                    
+                    <div class="mission-subtitle-section">
+                        <h3 class="mission-subtitle">Почему выбирают нас</h3>
+                        <div class="divider"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Features -->
-        <section class="container mx-auto px-4 pb-20">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-700">
-                <!-- Feature 1 -->
-                <div class="flex flex-col items-center pt-8 md:pt-0 px-4">
-                    <div class="mb-6 p-4 rounded-full bg-gray-800/50 border border-gray-700">
-                        <i data-lucide="factory" class="w-12 h-12 text-gray-300"></i>
+        <section class="features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i data-lucide="factory"></i>
+                        </div>
+                        <h4 class="feature-title">Собственное производство</h4>
+                        <p>Полный цикл от проектирования до пуско-наладки. Контроль качества на каждом этапе.</p>
                     </div>
-                    <h4 class="font-display text-2xl md:text-3xl mb-4 uppercase tracking-wide">
-                        Собственное производство
-                    </h4>
-                    <p class="text-gray-400 leading-relaxed max-w-xs">
-                        Полный цикл от проектирования до пуско-наладки. Контроль качества на каждом этапе.
-                    </p>
-                </div>
-                <!-- Feature 2 -->
-                <div class="flex flex-col items-center pt-8 md:pt-0 px-4">
-                    <div class="mb-6 p-4 rounded-full bg-gray-800/50 border border-gray-700">
-                        <i data-lucide="sliders-horizontal" class="w-12 h-12 text-gray-300"></i>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i data-lucide="sliders-horizontal"></i>
+                        </div>
+                        <h4 class="feature-title">Индивидуальные решения</h4>
+                        <p>Адаптация под ваши техпроцессы. Спецпроекты любой сложности.</p>
                     </div>
-                    <h4 class="font-display text-2xl md:text-3xl mb-4 uppercase tracking-wide">
-                        Индивидуальные решения
-                    </h4>
-                    <p class="text-gray-400 leading-relaxed max-w-xs">
-                        Адаптация под ваши техпроцессы. Спецпроекты любой сложности.
-                    </p>
-                </div>
-                <!-- Feature 3 -->
-                <div class="flex flex-col items-center pt-8 md:pt-0 px-4">
-                    <div class="mb-6 p-4 rounded-full bg-gray-800/50 border border-gray-700">
-                        <i data-lucide="star" class="w-12 h-12 text-gray-300"></i>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i data-lucide="star"></i>
+                        </div>
+                        <h4 class="feature-title">Экспертность</h4>
+                        <p>Работаем с ведущими предприятиями отрасли. Более 300 успешных проектов.</p>
                     </div>
-                    <h4 class="font-display text-2xl md:text-3xl mb-4 uppercase tracking-wide">
-                        Экспертность
-                    </h4>
-                    <p class="text-gray-400 leading-relaxed max-w-xs">
-                        Работаем с ведущими предприятиями отрасли. Более 300 успешных проектов.
-                    </p>
                 </div>
+                <div class="divider"></div>
             </div>
-            <div class="w-full h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent mt-20"></div>
         </section>
 
         <!-- Industries -->
-        <section class="container mx-auto px-4 py-12">
-            <h2 class="font-display text-4xl mb-12 pl-4 border-l-4 border-white">
-                Индустрии применения
-            </h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <!-- Industry 1 -->
-                <div class="group flex flex-col items-center text-center p-6 rounded-xl bg-gray-800/30 hover:bg-gray-800 transition-all duration-300 border border-transparent hover:border-gray-600">
-                    <div class="mb-4 text-gray-400 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="flask-conical" class="w-10 h-10"></i>
+        <section class="industries-section">
+            <div class="container">
+                <h2 class="section-title">Индустрии применения</h2>
+                
+                <div class="industries-grid">
+                    <div class="industry-card">
+                        <i data-lucide="flask-conical"></i>
+                        <span>Керамическая промышленность</span>
                     </div>
-                    <span class="text-sm md:text-base font-medium text-gray-300 group-hover:text-white">
-                        Керамическая промышленность
-                    </span>
-                </div>
-                <!-- Industry 2 -->
-                <div class="group flex flex-col items-center text-center p-6 rounded-xl bg-gray-800/30 hover:bg-gray-800 transition-all duration-300 border border-transparent hover:border-gray-600">
-                    <div class="mb-4 text-gray-400 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="beaker" class="w-10 h-10"></i>
+                    <div class="industry-card">
+                        <i data-lucide="beaker"></i>
+                        <span>Химическая промышленность</span>
                     </div>
-                    <span class="text-sm md:text-base font-medium text-gray-300 group-hover:text-white">
-                        Химическая промышленность
-                    </span>
-                </div>
-                <!-- Industry 3 -->
-                <div class="group flex flex-col items-center text-center p-6 rounded-xl bg-gray-800/30 hover:bg-gray-800 transition-all duration-300 border border-transparent hover:border-gray-600">
-                    <div class="mb-4 text-gray-400 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="hammer" class="w-10 h-10"></i>
+                    <div class="industry-card">
+                        <i data-lucide="hammer"></i>
+                        <span>Металлургия</span>
                     </div>
-                    <span class="text-sm md:text-base font-medium text-gray-300 group-hover:text-white">
-                        Металлургия
-                    </span>
-                </div>
-                <!-- Industry 4 -->
-                <div class="group flex flex-col items-center text-center p-6 rounded-xl bg-gray-800/30 hover:bg-gray-800 transition-all duration-300 border border-transparent hover:border-gray-600">
-                    <div class="mb-4 text-gray-400 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="rocket" class="w-10 h-10"></i>
+                    <div class="industry-card">
+                        <i data-lucide="rocket"></i>
+                        <span>Авиакосмическая отрасль</span>
                     </div>
-                    <span class="text-sm md:text-base font-medium text-gray-300 group-hover:text-white">
-                        Авиакосмическая отрасль
-                    </span>
-                </div>
-                <!-- Industry 5 -->
-                <div class="group flex flex-col items-center text-center p-6 rounded-xl bg-gray-800/30 hover:bg-gray-800 transition-all duration-300 border border-transparent hover:border-gray-600">
-                    <div class="mb-4 text-gray-400 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="zap" class="w-10 h-10"></i>
+                    <div class="industry-card">
+                        <i data-lucide="zap"></i>
+                        <span>Электротехника</span>
                     </div>
-                    <span class="text-sm md:text-base font-medium text-gray-300 group-hover:text-white">
-                        Электротехника
-                    </span>
-                </div>
-                <!-- Industry 6 -->
-                <div class="group flex flex-col items-center text-center p-6 rounded-xl bg-gray-800/30 hover:bg-gray-800 transition-all duration-300 border border-transparent hover:border-gray-600">
-                    <div class="mb-4 text-gray-400 group-hover:text-white transition-colors duration-300">
-                        <i data-lucide="microscope" class="w-10 h-10"></i>
+                    <div class="industry-card">
+                        <i data-lucide="microscope"></i>
+                        <span>Лаборатории и НИИ</span>
                     </div>
-                    <span class="text-sm md:text-base font-medium text-gray-300 group-hover:text-white">
-                        Лаборатории и НИИ
-                    </span>
                 </div>
             </div>
         </section>
 
         <!-- Stats -->
-        <section class="relative w-full bg-white text-gray-900 py-24 overflow-hidden mt-16">
-            <!-- Background pattern -->
-            <div class="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-            
-            <div class="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between">
-                
-                <div class="flex flex-col items-start mb-12 lg:mb-0 lg:w-1/2">
-                   <div class="flex items-baseline gap-4">
-                      <span class="font-display text-[120px] md:text-[180px] leading-none font-bold text-gray-900">
-                        10
-                      </span>
-                      <div class="flex flex-col">
-                         <span class="text-xl font-bold uppercase tracking-widest text-gray-500 mb-2">Реализовали</span>
-                         <span class="font-display text-5xl md:text-6xl uppercase">Более</span>
-                      </div>
-                   </div>
-                   <div class="mt-4 pl-4 border-l-8 border-gray-900">
-                      <span class="block font-display text-5xl md:text-7xl uppercase text-gray-800">индивидуальных</span>
-                      <span class="block font-display text-5xl md:text-7xl uppercase text-gray-800">проектов</span>
-                   </div>
+        <section class="stats-section">
+            <div class="stats-bg"></div>
+            <div class="container">
+                <div class="stats-content">
+                    <div class="stats-text">
+                        <div class="stats-number-section">
+                            <span class="stats-number">10</span>
+                            <div class="stats-labels">
+                                <span class="stats-label-small">Реализовали</span>
+                                <span class="stats-label-large">Более</span>
+                            </div>
+                        </div>
+                        <div class="stats-detail">
+                            <span class="stats-detail-line">индивидуальных</span>
+                            <span class="stats-detail-line">проектов</span>
+                        </div>
+                    </div>
+                    <div class="stats-graphics"></div>
                 </div>
-
-                <!-- Decorative graphic -->
-                <div class="hidden lg:block lg:w-1/2 relative h-64 md:h-96 w-full">
-                   <div class="absolute right-0 bottom-0 w-0 h-0 border-l-[100px] border-l-transparent border-b-[300px] border-b-gray-200 border-r-[100px] border-r-transparent opacity-50 blur-sm transform rotate-12"></div>
-                   <div class="absolute right-20 bottom-10 w-0 h-0 border-l-[150px] border-l-transparent border-b-[400px] border-b-gray-900 border-r-[150px] border-r-transparent opacity-10"></div>
-                   <!-- Abstract lines -->
-                   <div class="absolute top-1/2 right-10 w-64 h-1 bg-gray-900 transform -rotate-45"></div>
-                   <div class="absolute top-1/2 right-24 w-64 h-1 bg-gray-400 transform -rotate-45"></div>
-                </div>
-
             </div>
         </section>
 
         <!-- Contact Form -->
-        <section class="relative w-full py-20 bg-[#1a1d24]">
-            <!-- Background Texture Overlay -->
-            <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;)"></div>
-
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="max-w-4xl mx-auto bg-black/40 backdrop-blur-sm border border-gray-700 p-8 md:p-12 rounded-2xl shadow-2xl">
-                  
-                  <div class="text-center mb-10">
-                    <h2 class="font-display text-4xl md:text-5xl mb-4">Остались вопросы?</h2>
-                    <p class="text-gray-400 md:text-lg max-w-2xl mx-auto">
-                      Вы можете быстро получить консультацию. Для этого напишите на почту <a href="mailto:stanislavpolyanskikh@yandex.ru" class="text-white underline hover:text-gray-300">stanislavpolyanskikh@yandex.ru</a> или свяжитесь через форму обратной связи.
-                    </p>
-                  </div>
-
-                  <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div class="space-y-2">
-                        <label for="name" class="block font-display text-xl uppercase text-gray-300">имя *</label>
-                        <input type="text" id="name" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md" placeholder="Ваше имя">
-                      </div>
-                      <div class="space-y-2">
-                        <label for="phone" class="block font-display text-xl uppercase text-gray-300">Номер телефона *</label>
-                        <input type="tel" id="phone" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md" placeholder="+7 (___) ___-__-__">
-                      </div>
+        <section class="contact-section">
+            <div class="contact-bg"></div>
+            <div class="container">
+                <div class="contact-form-container">
+                    <div class="contact-header">
+                        <h2 class="contact-title">Остались вопросы?</h2>
+                        <p class="contact-text">
+                            Вы можете быстро получить консультацию. Для этого напишите на почту 
+                            <a href="mailto:stanislavpolyanskikh@yandex.ru">stanislavpolyanskikh@yandex.ru</a> 
+                            или свяжитесь через форму обратной связи.
+                        </p>
                     </div>
 
-                    <div class="space-y-2">
-                      <label for="message" class="block font-display text-xl uppercase text-gray-300">Ваш вопрос*</label>
-                      <textarea id="message" rows="4" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md resize-none" placeholder="Опишите вашу задачу..."></textarea>
-                    </div>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">имя *</label>
+                                <input type="text" id="name" placeholder="Ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Номер телефона *</label>
+                                <input type="tel" id="phone" placeholder="+7 (___) ___-__-__">
+                            </div>
+                        </div>
 
-                    <div class="flex justify-center pt-4">
-                      <button type="submit" class="w-full md:w-auto px-12 py-4 bg-gray-700 hover:bg-gray-600 text-white font-display text-xl uppercase tracking-widest rounded transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                        Задать вопрос
-                      </button>
-                    </div>
-                  </form>
+                        <div class="form-group">
+                            <label for="message">Ваш вопрос*</label>
+                            <textarea id="message" rows="4" placeholder="Опишите вашу задачу..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Задать вопрос</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black py-8 text-center text-gray-600 text-sm">
-        <div class="container mx-auto px-4">
+    <footer class="footer">
+        <div class="container">
             <p>&copy; 2024 AVT Industrial Solutions. Все права защищены.</p>
         </div>
     </footer>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Mobile Menu Toggle Logic
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const iconOpen = document.getElementById('icon-menu');
-        const iconClose = document.getElementById('icon-close');
-
-        if (btn && menu) {
-            btn.addEventListener('click', () => {
-                const isHidden = menu.classList.contains('hidden');
-                if (isHidden) {
-                    menu.classList.remove('hidden');
-                    iconOpen.classList.add('hidden');
-                    iconClose.classList.remove('hidden');
-                } else {
-                    menu.classList.add('hidden');
-                    iconOpen.classList.remove('hidden');
-                    iconClose.classList.add('hidden');
-                }
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
