@@ -8,7 +8,7 @@ interface CatalogItemProps {
 }
 
 const CatalogItem: React.FC<CatalogItemProps> = ({ title, className = "", image, textPosition = 'left' }) => (
-  <div className={`relative group overflow-hidden bg-gray-900 ${className} h-[350px]`}>
+  <div className={`relative group overflow-hidden bg-gray-900 ${className} h-[264px]`}>
     {/* Image */}
     <img 
       src={image} 
@@ -25,7 +25,7 @@ const CatalogItem: React.FC<CatalogItemProps> = ({ title, className = "", image,
         ? 'items-center text-center pt-8 md:pt-10' 
         : 'justify-center items-start text-left pl-8 md:pl-12'
     }`}>
-      <h3 className="font-display text-3xl md:text-4xl lg:text-5xl leading-[0.9] text-white uppercase tracking-wider drop-shadow-lg">
+      <h3 className="font-display text-2xl md:text-3xl lg:text-4xl leading-[0.9] text-white uppercase tracking-wider drop-shadow-lg">
         {title.split('\n').map((line, i) => (
           <span key={i} className="block mb-1">{line}</span>
         ))}
