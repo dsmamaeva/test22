@@ -90,7 +90,7 @@
 <body class="overflow-x-hidden">
 
     <!-- Header -->
-    <header class="w-full bg-black/90 text-white sticky top-0 z-50 border-b border-gray-800">
+    <header class="w-full bg-black/90 text-white sticky top-0 z-50 border-b border-gray-800 relative">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
@@ -103,7 +103,11 @@
                 <!-- Desktop Nav -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="catalog.html" class="font-display text-xl tracking-wider text-white border border-white/50 bg-white/10 px-4 py-2 rounded-md transition-colors hover:bg-white/20">Каталог</a>
+                        <!-- Catalog Button (Toggles Dropdown) -->
+                        <button id="catalog-btn" class="font-display text-xl tracking-wider text-white border border-white/50 bg-white/10 px-4 py-2 rounded-md transition-colors hover:bg-white/20 flex items-center gap-2">
+                            Каталог
+                        </button>
+                        
                         <a href="#" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Решения</a>
                         <a href="#" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
                         <a href="#" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
@@ -122,10 +126,60 @@
             </div>
         </div>
 
+        <!-- Catalog Dropdown (Overlay) -->
+        <div id="catalog-dropdown" class="hidden absolute top-full left-0 w-full bg-black border-b border-gray-700 shadow-2xl z-40">
+            <div class="container mx-auto px-4 py-8">
+                <div class="flex flex-col items-start gap-4">
+                     <!-- Item 1 -->
+                    <a href="#" class="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <span class="font-display text-2xl text-white tracking-wide">Лабораторные печи</span>
+                        <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </div>
+                    </a>
+
+                    <!-- Item 2 -->
+                    <a href="#" class="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <span class="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
+                        <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </div>
+                    </a>
+
+                    <!-- Item 3 -->
+                    <a href="#" class="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <span class="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
+                        <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </div>
+                    </a>
+
+                    <!-- Item 4 -->
+                    <a href="#" class="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <span class="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
+                        <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Mobile Nav -->
         <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="catalog.html" class="text-white bg-gray-900 block px-3 py-2 rounded-md text-xl font-display tracking-wider">Каталог</a>
+                <button id="mobile-catalog-btn" class="w-full text-left text-white bg-gray-900 block px-3 py-2 rounded-md text-xl font-display tracking-wider flex justify-between items-center">
+                    Каталог
+                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                </button>
+                <!-- Mobile Catalog Submenu -->
+                <div id="mobile-catalog-submenu" class="hidden pl-4 space-y-2 py-2 bg-gray-900/50 rounded-md mt-1">
+                     <a href="#" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Лабораторные печи</a>
+                     <a href="#" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Промышленные печи</a>
+                     <a href="#" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Туннельные печи</a>
+                     <a href="#" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Высокотемпературные печи</a>
+                </div>
+
                 <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Решения</a>
                 <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Сервис</a>
                 <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">О нас</a>
@@ -339,14 +393,14 @@
             <div class="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between">
                 
                 <div class="flex flex-col items-start mb-12 lg:mb-0 lg:w-1/2">
-                   <div class="flex items-end gap-4">
-                      <div class="flex flex-col items-end text-right">
-                         <span class="text-xl font-bold uppercase tracking-widest text-gray-500 mb-2">Реализовали</span>
-                         <span class="font-display text-5xl md:text-6xl uppercase">Более</span>
-                      </div>
+                   <div class="flex items-baseline gap-4">
                       <span class="font-display text-[120px] md:text-[180px] leading-[0.75] font-bold text-gray-900">
                         10
                       </span>
+                      <div class="flex flex-col">
+                         <span class="text-xl font-bold uppercase tracking-widest text-gray-500 mb-2">Реализовали</span>
+                         <span class="font-display text-5xl md:text-6xl uppercase">Более</span>
+                      </div>
                    </div>
                    <div class="mt-4 pl-4 border-l-8 border-gray-900 self-end md:self-auto text-right md:text-left w-full">
                       <span class="block font-display text-5xl md:text-7xl uppercase text-gray-800">индивидуальных</span>
@@ -424,6 +478,10 @@
         const menu = document.getElementById('mobile-menu');
         const iconOpen = document.getElementById('icon-menu');
         const iconClose = document.getElementById('icon-close');
+        
+        // Desktop Dropdown Logic
+        const catalogBtn = document.getElementById('catalog-btn');
+        const catalogDropdown = document.getElementById('catalog-dropdown');
 
         if (btn && menu) {
             btn.addEventListener('click', () => {
@@ -438,6 +496,28 @@
                     iconClose.classList.add('hidden');
                 }
             });
+        }
+
+        // Toggle mobile catalog submenu
+        const mobileCatalogBtn = document.getElementById('mobile-catalog-btn');
+        const mobileCatalogSubmenu = document.getElementById('mobile-catalog-submenu');
+        if (mobileCatalogBtn && mobileCatalogSubmenu) {
+            mobileCatalogBtn.addEventListener('click', () => {
+                 mobileCatalogSubmenu.classList.toggle('hidden');
+            });
+        }
+
+        if (catalogBtn && catalogDropdown) {
+             catalogBtn.addEventListener('click', (e) => {
+                 e.stopPropagation();
+                 catalogDropdown.classList.toggle('hidden');
+             });
+
+             document.addEventListener('click', (e) => {
+                 if (!catalogDropdown.contains(e.target) && !catalogBtn.contains(e.target)) {
+                     catalogDropdown.classList.add('hidden');
+                 }
+             });
         }
     </script>
 </body>
