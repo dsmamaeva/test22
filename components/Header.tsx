@@ -4,7 +4,7 @@ import { Menu, X, ChevronRight } from 'lucide-react';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<'ind' | 'lab' | 'tun' | null>(null);
+  const [activeCategory, setActiveCategory] = useState<'ind' | 'lab' | 'tun' | 'high' | null>(null);
 
   const toggleCatalog = () => {
     setIsCatalogOpen(!isCatalogOpen);
@@ -79,8 +79,11 @@ const Header: React.FC = () => {
                       </div>
                   </button>
 
-                  {/* High Temp Ovens Button (Placeholder) */}
-                  <button className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] hover:bg-[#3b4050] flex items-center justify-between px-6 transition-all duration-300 text-left">
+                  {/* High Temp Ovens Button */}
+                  <button 
+                    onClick={() => setActiveCategory('high')}
+                    className={`group w-full md:w-[300px] h-[80px] hover:bg-[#3b4050] flex items-center justify-between px-6 transition-all duration-300 text-left ${activeCategory === 'high' ? 'bg-[#3b4050]' : 'bg-[#2a2e3a]'}`}
+                  >
                       <span className="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
                       <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
                           <ChevronRight size={24} />
@@ -105,7 +108,7 @@ const Header: React.FC = () => {
                              <p className="text-gray-300 text-lg leading-relaxed">
                                 Линейка настольных печей с объемом рабочего пространства от 3 до 100 литров. Широкий набор опций позволяет использовать печь для процессов с удалением летучих веществ, купелирования, закалки, отжига и нормализации.
                              </p>
-                             <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                             <a href="lab.html" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                  Перейти в раздел
                              </a>
                          </div>
@@ -136,6 +139,22 @@ const Header: React.FC = () => {
                          <div className="w-full lg:w-1/2 flex flex-col gap-6 text-left">
                              <p className="text-gray-300 text-lg leading-relaxed">
                                 Многозонные проходные печи с электрическим обогревом применяются в производственных линиях, где требуется непрерывность процесса обжига в течении длительного времени.
+                             </p>
+                             <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                 Перейти в раздел
+                             </a>
+                         </div>
+                     </div>
+                 )}
+
+                 {activeCategory === 'high' && (
+                     <div className="w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                         <div className="w-full lg:w-1/2 flex justify-center">
+                             <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/CpBzd9A9Sv.png" alt="Высокотемпературные печи" className="max-w-full h-auto max-h-[300px] object-contain" />
+                         </div>
+                         <div className="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                             <p className="text-gray-300 text-lg leading-relaxed">
+                                Серия напольных высокотемпературных печей с рабочим объемом камеры от 16 до 276 литров и температурами до 1800°C.
                              </p>
                              <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                  Перейти в раздел
