@@ -82,7 +82,11 @@
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "url": "https://aistudiocdn.com/url@^0.11.4"
   }
 }
 </script>
@@ -150,8 +154,8 @@
                             </div>
                         </a>
 
-                        <!-- Item 3 -->
-                        <a href="#" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <!-- Item 3: Туннельные печи -->
+                        <a href="#" id="menu-item-tun" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -197,6 +201,23 @@
                             <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
                                 <p class="text-gray-300 text-lg leading-relaxed">
                                     Предназначены для использования в различных отраслях промышленности, включая крупное серийное производство, лаборатории и гончарные мастерские.
+                                </p>
+                                <a href="#" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                    Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Tunnel Ovens Details -->
+                        <div id="details-tun" class="details-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <!-- Image -->
+                            <div class="w-full lg:w-1/2 flex justify-center">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/aZNxtrQAOf.png" alt="Туннельные печи" class="max-w-full h-auto max-h-[300px] object-contain">
+                            </div>
+                            <!-- Text Content -->
+                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p class="text-gray-300 text-lg leading-relaxed">
+                                    Многозонные проходные печи с электрическим обогревом применяются в производственных линиях, где требуется непрерывность процесса обжига в течении длительного времени.
                                 </p>
                                 <a href="#" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                     Перейти в раздел
@@ -532,6 +553,8 @@
         const detailsLab = document.getElementById('details-lab');
         const menuItemInd = document.getElementById('menu-item-ind');
         const detailsInd = document.getElementById('details-ind');
+        const menuItemTun = document.getElementById('menu-item-tun');
+        const detailsTun = document.getElementById('details-tun');
 
         if (btn && menu) {
             btn.addEventListener('click', () => {
@@ -631,6 +654,16 @@
                 hideAllDetails();
                 detailsInd.classList.remove('hidden');
                 activateMenuLink(menuItemInd);
+            });
+        }
+
+        // Handle interaction with Tunnel Ovens item
+        if (menuItemTun && detailsTun) {
+            menuItemTun.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                hideAllDetails();
+                detailsTun.classList.remove('hidden');
+                activateMenuLink(menuItemTun);
             });
         }
     </script>
