@@ -133,17 +133,17 @@
                 <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
                     
                     <!-- Left: Menu Items -->
-                    <div class="flex flex-col items-start gap-4 shrink-0">
+                    <div class="flex flex-col items-start gap-4 shrink-0" id="catalog-menu-items">
                          <!-- Item 1: Лабораторные печи -->
-                        <a href="#" id="menu-item-lab" class="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="#" id="menu-item-lab" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Лабораторные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
                             </div>
                         </a>
 
-                        <!-- Item 2 -->
-                        <a href="#" class="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <!-- Item 2: Промышленные печи -->
+                        <a href="#" id="menu-item-ind" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -151,7 +151,7 @@
                         </a>
 
                         <!-- Item 3 -->
-                        <a href="#" class="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="#" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -159,7 +159,7 @@
                         </a>
 
                         <!-- Item 4 -->
-                        <a href="#" class="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="#" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -169,8 +169,9 @@
 
                     <!-- Right: Content Details (Initially hidden, shown on interaction) -->
                     <div id="catalog-details" class="flex-grow hidden md:block relative min-h-[350px]">
+                        
                         <!-- Laboratory Ovens Details -->
-                        <div id="details-lab" class="hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                        <div id="details-lab" class="details-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
                             <!-- Image -->
                             <div class="w-full lg:w-1/2 flex justify-center">
                                 <img src="Img/imglab.png" alt="Лабораторные печи" class="max-w-full h-auto max-h-[300px] object-contain">
@@ -185,7 +186,24 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- Placeholders for other categories can be added similarly -->
+
+                        <!-- Industrial Ovens Details -->
+                        <div id="details-ind" class="details-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <!-- Image -->
+                            <div class="w-full lg:w-1/2 flex justify-center">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/fFKOob8vHA.png" alt="Промышленные печи" class="max-w-full h-auto max-h-[300px] object-contain">
+                            </div>
+                            <!-- Text Content -->
+                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p class="text-gray-300 text-lg leading-relaxed">
+                                    Предназначены для использования в различных отраслях промышленности, включая крупное серийное производство, лаборатории и гончарные мастерские.
+                                </p>
+                                <a href="#" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                    Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -512,6 +530,8 @@
         // Items logic
         const menuItemLab = document.getElementById('menu-item-lab');
         const detailsLab = document.getElementById('details-lab');
+        const menuItemInd = document.getElementById('menu-item-ind');
+        const detailsInd = document.getElementById('details-ind');
 
         if (btn && menu) {
             btn.addEventListener('click', () => {
@@ -564,18 +584,54 @@
              });
         }
 
+        // Helpers to manage details
+        function hideAllDetails() {
+            const details = document.querySelectorAll('.details-content');
+            details.forEach(detail => detail.classList.add('hidden'));
+            
+            const links = document.querySelectorAll('.catalog-menu-link');
+            links.forEach(link => {
+                link.classList.remove('bg-[#3b4050]');
+                link.classList.add('bg-[#2a2e3a]');
+                
+                // Reset icon color
+                const icon = link.querySelector('.text-white');
+                if (icon) {
+                    icon.classList.remove('text-white');
+                    icon.classList.add('text-gray-400');
+                }
+            });
+        }
+
+        function activateMenuLink(link) {
+            link.classList.remove('bg-[#2a2e3a]');
+            link.classList.add('bg-[#3b4050]');
+            
+            const iconDiv = link.querySelector('div');
+            if (iconDiv) {
+                iconDiv.classList.remove('text-gray-400');
+                iconDiv.classList.add('text-white');
+            }
+        }
+
         // Handle interaction with Laboratory Ovens item
         if (menuItemLab && detailsLab) {
-            // Function to show details
-            const showLabDetails = (e) => {
-                // Prevent default navigation if it's a link
+            menuItemLab.addEventListener('click', (e) => {
                 e.preventDefault(); 
-                // Hide any other details if present (future proofing)
-                // Show lab details
+                hideAllDetails();
                 detailsLab.classList.remove('hidden');
-            };
+                activateMenuLink(menuItemLab);
+            });
+        }
 
-            menuItemLab.addEventListener('click', showLabDetails);
+        // Handle interaction with Industrial Ovens item
+        if (menuItemInd && detailsInd) {
+            menuItemInd.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                hideAllDetails();
+                detailsInd.classList.remove('hidden');
+                activateMenuLink(menuItemInd);
+            });
         }
     </script>
 </body>

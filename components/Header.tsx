@@ -94,13 +94,16 @@ const Header: React.FC = () => {
                            </div>
                        </a>
 
-                       {/* Item 2 */}
+                       {/* Item 2: Промышленные печи */}
                        <a 
                           href="#" 
-                          className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                          onClick={(e) => { e.preventDefault(); setActiveCategory('ind'); }}
+                          className={`group w-full md:w-[300px] h-[80px] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${
+                              activeCategory === 'ind' ? 'bg-[#3b4050]' : 'bg-[#2a2e3a] hover:bg-[#3b4050]'
+                          }`}
                        >
                            <span className="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
-                           <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
+                           <div className={`transition-colors duration-300 ${activeCategory === 'ind' ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
                                <ChevronRight size={24} />
                            </div>
                        </a>
@@ -130,6 +133,8 @@ const Header: React.FC = () => {
 
                    {/* Right Column: Content Details */}
                    <div className="flex-grow relative min-h-[350px]">
+                       
+                       {/* Lab Details */}
                        {activeCategory === 'lab' && (
                            <div className="absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
                                {/* Image */}
@@ -151,7 +156,30 @@ const Header: React.FC = () => {
                                </div>
                            </div>
                        )}
-                       {/* You can add conditional rendering for other categories here */}
+
+                       {/* Industrial Details */}
+                       {activeCategory === 'ind' && (
+                           <div className="absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                               {/* Image */}
+                               <div className="w-full lg:w-1/2 flex justify-center">
+                                   <img 
+                                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/fFKOob8vHA.png" 
+                                      alt="Промышленные печи" 
+                                      className="max-w-full h-auto max-h-[300px] object-contain"
+                                   />
+                               </div>
+                               {/* Text Content */}
+                               <div className="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                   <p className="text-gray-300 text-lg leading-relaxed">
+                                       Предназначены для использования в различных отраслях промышленности, включая крупное серийное производство, лаборатории и гончарные мастерские.
+                                   </p>
+                                   <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                       Перейти в раздел
+                                   </a>
+                               </div>
+                           </div>
+                       )}
+
                    </div>
                </div>
            </div>
