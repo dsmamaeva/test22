@@ -13,6 +13,8 @@ const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [isMobileCatalogOpen, setIsMobileCatalogOpen] = useState(false);
+  // State to track which category is currently hovered/active in the dropdown
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   return (
     <header className="w-full bg-black/90 text-white sticky top-0 z-50 border-b border-gray-800 relative">
@@ -69,42 +71,92 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Catalog Dropdown (Overlay) */}
+      {/* Catalog Dropdown (Overlay) - Mega Menu Layout */}
       {isCatalogOpen && (
         <div className="hidden md:block absolute top-full left-0 w-full bg-black border-b border-gray-700 shadow-2xl z-40">
            <div className="container mx-auto px-4 py-8">
-               <div className="flex flex-col items-start gap-4">
-                    {/* Item 1 */}
-                   <a href="#" className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                       <span className="font-display text-2xl text-white tracking-wide">Лабораторные печи</span>
-                       <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
-                           <ChevronRight size={24} />
-                       </div>
-                   </a>
+               {/* Grid/Flex Layout for Menu Items + Content Panel */}
+               <div className="flex flex-col md:flex-row gap-8 lg:gap-16">
+                   
+                   {/* Left Column: Menu Items */}
+                   <div className="flex flex-col items-start gap-4 shrink-0">
+                       {/* Item 1: Лабораторные печи */}
+                       <a 
+                          href="#" 
+                          onClick={(e) => { e.preventDefault(); setActiveCategory('lab'); }}
+                          onMouseEnter={() => setActiveCategory('lab')}
+                          className={`group w-full md:w-[300px] h-[80px] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${
+                              activeCategory === 'lab' ? 'bg-[#3b4050]' : 'bg-[#2a2e3a] hover:bg-[#3b4050]'
+                          }`}
+                       >
+                           <span className="font-display text-2xl text-white tracking-wide">Лабораторные печи</span>
+                           <div className={`transition-colors duration-300 ${activeCategory === 'lab' ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
+                               <ChevronRight size={24} />
+                           </div>
+                       </a>
 
-                   {/* Item 2 */}
-                   <a href="#" className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                       <span className="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
-                       <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
-                           <ChevronRight size={24} />
-                       </div>
-                   </a>
+                       {/* Item 2 */}
+                       <a 
+                          href="#" 
+                          onMouseEnter={() => setActiveCategory('industrial')}
+                          className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                       >
+                           <span className="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
+                           <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
+                               <ChevronRight size={24} />
+                           </div>
+                       </a>
 
-                   {/* Item 3 */}
-                   <a href="#" className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                       <span className="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
-                       <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
-                           <ChevronRight size={24} />
-                       </div>
-                   </a>
+                       {/* Item 3 */}
+                       <a 
+                          href="#" 
+                          onMouseEnter={() => setActiveCategory('tunnel')}
+                          className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                       >
+                           <span className="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
+                           <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
+                               <ChevronRight size={24} />
+                           </div>
+                       </a>
 
-                   {/* Item 4 */}
-                   <a href="#" className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                       <span className="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
-                       <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
-                           <ChevronRight size={24} />
-                       </div>
-                   </a>
+                       {/* Item 4 */}
+                       <a 
+                          href="#" 
+                          onMouseEnter={() => setActiveCategory('high-temp')}
+                          className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+                       >
+                           <span className="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
+                           <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
+                               <ChevronRight size={24} />
+                           </div>
+                       </a>
+                   </div>
+
+                   {/* Right Column: Content Details */}
+                   <div className="flex-grow relative min-h-[350px]">
+                       {activeCategory === 'lab' && (
+                           <div className="absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                               {/* Image */}
+                               <div className="w-full lg:w-1/2 flex justify-center">
+                                   <img 
+                                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/iNtpTKAmN6.png" 
+                                      alt="Лабораторные печи" 
+                                      className="max-w-full h-auto max-h-[300px] object-contain"
+                                   />
+                               </div>
+                               {/* Text Content */}
+                               <div className="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                   <p className="text-gray-300 text-lg leading-relaxed">
+                                       Линейка настольных печей с объемом рабочего пространства от 3 до 100 литров. Широкий набор опций позволяет использовать печь для процессов с удалением летучих веществ, купелирования, закалки, отжига и нормализации.
+                                   </p>
+                                   <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                       Перейти в раздел
+                                   </a>
+                               </div>
+                           </div>
+                       )}
+                       {/* You can add conditional rendering for other categories here */}
+                   </div>
                </div>
            </div>
         </div>
