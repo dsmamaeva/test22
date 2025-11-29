@@ -257,14 +257,71 @@
         <div class="container mx-auto px-4">
              <!-- Top Section with Images and Text -->
              <div class="flex flex-col lg:flex-row gap-8 items-start">
-                 <!-- Images (Left) -->
-                 <div class="w-full lg:w-5/12 grid grid-cols-2 gap-4">
-                      <!-- Using imgLab twice to mimic the two views layout shown in screenshot -->
-                      <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
-                          <img src="Img/imglab.png" alt="Лабораторная печь - внешний вид" class="w-full h-full object-cover">
+                 <!-- Images & Dimensions Table (Left) -->
+                 <div class="w-full lg:w-5/12 flex flex-col gap-6">
+                      <!-- Images Grid -->
+                      <div class="grid grid-cols-2 gap-4">
+                          <!-- Using imgLab twice to mimic the two views layout shown in screenshot -->
+                          <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
+                              <img src="Img/imglab.png" alt="Лабораторная печь - внешний вид" class="w-full h-full object-cover">
+                          </div>
+                          <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
+                              <img src="Img/imglab.png" alt="Лабораторная печь - камера" class="w-full h-full object-cover">
+                          </div>
                       </div>
-                      <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
-                          <img src="Img/imglab.png" alt="Лабораторная печь - камера" class="w-full h-full object-cover">
+
+                      <!-- Dimensions Table -->
+                      <div class="overflow-x-auto rounded border border-gray-600 shadow-xl bg-[#2a2e3a]">
+                          <table class="w-full text-xs md:text-sm text-center border-collapse min-w-[500px]">
+                              <thead>
+                                  <tr class="bg-[#2a2e3a] text-white font-bold border-b border-gray-600">
+                                      <th class="p-2 md:p-3 text-left border-r border-gray-600 w-1/4 bg-[#323642]">Объем рабочей<br>камеры, л</th>
+                                      <th class="p-2 md:p-3 border-r border-gray-600">3</th>
+                                      <th class="p-2 md:p-3 border-r border-gray-600">5</th>
+                                      <th class="p-2 md:p-3 border-r border-gray-600">9</th>
+                                      <th class="p-2 md:p-3 border-r border-gray-600">15</th>
+                                      <th class="p-2 md:p-3 border-r border-gray-600">30</th>
+                                      <th class="p-2 md:p-3 border-r border-gray-600">40</th>
+                                      <th class="p-2 md:p-3 border-r border-gray-600">70</th>
+                                      <th class="p-2 md:p-3">100</th>
+                                  </tr>
+                              </thead>
+                              <tbody class="text-gray-200">
+                                  <tr class="border-b border-gray-600 bg-[#2a2e3a]">
+                                      <td class="p-2 md:p-3 text-left font-medium border-r border-gray-600 bg-[#323642]">Ширина, мм</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">160</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">200</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">230</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">230</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">220</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">320</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">460</td>
+                                      <td class="p-2 md:p-3">460</td>
+                                  </tr>
+                                  <tr class="border-b border-gray-600 bg-[#2a2e3a]">
+                                      <td class="p-2 md:p-3 text-left font-medium border-r border-gray-600 bg-[#323642]">Глубина, мм</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">140</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">170</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">240</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">340</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">450</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">490</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">380</td>
+                                      <td class="p-2 md:p-3">440</td>
+                                  </tr>
+                                  <tr class="bg-[#2a2e3a]">
+                                      <td class="p-2 md:p-3 text-left font-medium border-r border-gray-600 bg-[#323642]">Высота, мм</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">100</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">130</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">170</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">170</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">300</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">250</td>
+                                      <td class="p-2 md:p-3 border-r border-gray-600">500</td>
+                                      <td class="p-2 md:p-3">500</td>
+                                  </tr>
+                              </tbody>
+                          </table>
                       </div>
                  </div>
 
@@ -291,7 +348,7 @@
                           <li>Соответствие стандартам электробезопасности</li>
                       </ul>
 
-                      <!-- Table -->
+                      <!-- Specifications Table -->
                       <div class="overflow-x-auto rounded border border-gray-600">
                           <table class="w-full text-sm text-left border-collapse">
                               <tbody>
