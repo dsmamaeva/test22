@@ -1,19 +1,36 @@
 import React, { useState } from 'react';
-import { Menu, X, Hexagon } from 'lucide-react';
+import { Menu, X, Hexagon, ChevronRight } from 'lucide-react';
 
 const navItems = [
-  { label: 'Каталог', href: '#' },
+  { label: 'Каталог', href: '#', isCatalogTrigger: true },
   { label: 'Решения', href: '#' },
   { label: 'Сервис', href: '#' },
   { label: 'О нас', href: '#' },
   { label: 'Контакты', href: '#' },
 ];
 
+const catalogCategories = [
+  { title: "Лабораторные печи", href: "#" },
+  { title: "Промышленные печи", href: "#" },
+  { title: "Туннельные печи", href: "#" },
+  { title: "Высокотемпературные печи", href: "#" },
+];
+
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+
+  const handleNavClick = (e: React.MouseEvent, item: typeof navItems[0]) => {
+    if (item.isCatalogTrigger) {
+      e.preventDefault();
+      setIsCatalogOpen(!isCatalogOpen);
+    } else {
+      setIsCatalogOpen(false);
+    }
+  };
 
   return (
-    <header className="w-full bg-black/90 text-white sticky top-0 z-50 border-b border-gray-800">
+    <header className="w-full bg-black/90 text-white sticky top-0 z-50 border-b border-gray-800 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -31,7 +48,10 @@ const Header: React.FC = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md"
+                  onClick={(e) => handleNavClick(e, item)}
+                  className={`font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md ${
+                    item.isCatalogTrigger && isCatalogOpen ? 'text-gray-300 bg-gray-800' : ''
+                  }`}
                 >
                   {item.label}
                 </a>
@@ -55,6 +75,35 @@ const Header: React.FC = () => {
         </div>
       </div>
 
+      {/* Catalog Dropdown (Overlay) */}
+      {isCatalogOpen && (
+        <div className="absolute top-full left-0 w-full bg-black border-t border-gray-800 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+              <div className="flex flex-col gap-6 pl-4 md:pl-20">
+                 {catalogCategories.map((cat, index) => (
+                   <a 
+                     key={index} 
+                     href={cat.href}
+                     className="group relative w-full md:w-[350px] h-[80px] bg-[#2a2e3a] flex items-center justify-between px-8 hover:bg-[#3b4050] transition-colors duration-300 cursor-pointer"
+                   >
+                      <span className="font-display text-2xl text-white tracking-wide">
+                        {cat.title}
+                      </span>
+                      <div className="text-gray-500 group-hover:text-white transition-colors duration-300">
+                        <ChevronRight size={24} />
+                      </div>
+                   </a>
+                 ))}
+              </div>
+           </div>
+           {/* Close overlay on click outside (transparent layer) */}
+           <div 
+             className="fixed inset-0 top-[calc(5rem+400px)] z-40 bg-black/20 backdrop-blur-sm"
+             onClick={() => setIsCatalogOpen(false)}
+           ></div>
+        </div>
+      )}
+
       {/* Mobile Nav */}
       {isOpen && (
         <div className="md:hidden bg-black border-t border-gray-800" id="mobile-menu">
@@ -63,6 +112,7 @@ const Header: React.FC = () => {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item)}
                 className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider"
               >
                 {item.label}
