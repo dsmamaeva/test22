@@ -195,7 +195,7 @@
                         <div id="details-ind" class="details-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
                             <!-- Image -->
                             <div class="w-full lg:w-1/2 flex justify-center">
-                                <img src="Img/imgprom.png" alt="Промышленные печи" class="max-w-full h-auto max-h-[300px] object-contain">
+                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/fFKOob8vHA.png" alt="Промышленные печи" class="max-w-full h-auto max-h-[300px] object-contain">
                             </div>
                             <!-- Text Content -->
                             <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
@@ -284,7 +284,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
                 
                 <!-- Row 1: Large Tiles -->
-                <div class="relative group overflow-hidden bg-gray-900 lg:col-span-3 h-[264px]">
+                <a href="lab.html" class="relative group overflow-hidden bg-gray-900 lg:col-span-3 h-[264px] block">
                     <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/iNtpTKAmN6.png" alt="Лабораторные печи" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 group-hover:from-black/80 group-hover:to-black/50 transition-colors duration-300"></div>
                     <div class="absolute inset-0 p-6 md:p-8 flex flex-col justify-center items-start text-left pl-8 md:pl-12">
@@ -293,7 +293,7 @@
                             <span class="block mb-1">печи</span>
                         </h3>
                     </div>
-                </div>
+                </a>
 
                 <div class="relative group overflow-hidden bg-gray-900 lg:col-span-3 h-[264px]">
                     <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/87BNZdmpsg.png" alt="Сервисное обслуживание" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80">
@@ -698,3 +698,110 @@
     </script>
 </body>
 </html>
+<change>
+    <file>components/CatalogGrid.tsx</file>
+    <description>Make Laboratory Ovens card a link to lab.html</description>
+    <content><![CDATA[import React from 'react';
+
+interface CatalogItemProps {
+  title: string;
+  className?: string;
+  image: string;
+  textPosition?: 'left' | 'center';
+  href?: string;
+}
+
+const CatalogItem: React.FC<CatalogItemProps> = ({ title, className = "", image, textPosition = 'left', href }) => {
+  const content = (
+    <>
+      {/* Image */}
+      <img 
+        src={image} 
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+      />
+      
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 group-hover:from-black/80 group-hover:to-black/50 transition-colors duration-300" />
+      
+      {/* Text Content */}
+      <div className={`absolute inset-0 p-6 md:p-8 flex flex-col ${
+        textPosition === 'center' 
+          ? 'items-center text-center pt-8 md:pt-10' 
+          : 'justify-center items-start text-left pl-8 md:pl-12'
+      }`}>
+        <h3 className="font-display text-2xl md:text-3xl lg:text-4xl leading-[0.9] text-white uppercase tracking-wider drop-shadow-lg">
+          {title.split('\n').map((line, i) => (
+            <span key={i} className="block mb-1">{line}</span>
+          ))}
+        </h3>
+      </div>
+    </>
+  );
+
+  const classes = `relative group overflow-hidden bg-gray-900 ${className} h-[264px] block`;
+
+  if (href) {
+    return <a href={href} className={classes}>{content}</a>;
+  }
+
+  return <div className={classes}>{content}</div>;
+};
+
+const CatalogGrid: React.FC = () => {
+  return (
+    <section className="container mx-auto px-4 py-12">
+      {/* 
+        Grid Layout Logic:
+        Desktop (lg): 6 column grid. 
+          - Row 1: 2 items spanning 3 cols each (50% width).
+          - Row 2: 3 items spanning 2 cols each (33.3% width).
+        Tablet (md): 2 column grid.
+          - Items flow naturally 2 per row.
+        Mobile: 1 column grid.
+      */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+        
+        {/* Row 1: Large Tiles */}
+        <CatalogItem 
+          title={'Лабораторные\nпечи'}
+          className="lg:col-span-3"
+          image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/iNtpTKAmN6.png"
+          textPosition="left"
+          href="lab.html"
+        />
+        <CatalogItem 
+          title={'Сервисное\nобслуживание'}
+          className="lg:col-span-3"
+          image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/87BNZdmpsg.png"
+          textPosition="left"
+        />
+
+        {/* Row 2: Medium Tiles */}
+        <CatalogItem 
+          title="Промышленные печи" 
+          className="lg:col-span-2"
+          image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/fFKOob8vHA.png"
+          textPosition="center"
+        />
+        <CatalogItem 
+          title="Туннельные печи" 
+          className="lg:col-span-2"
+          image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/aZNxtrQAOf.png"
+          textPosition="center"
+        />
+        <CatalogItem 
+          title="Высокотемпературные печи" 
+          className="lg:col-span-2"
+          image="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/CpBzd9A9Sv.png"
+          textPosition="center"
+        />
+
+      </div>
+    </section>
+  );
+};
+
+export default CatalogGrid;]]></content>
+  </change>
+</changes>
