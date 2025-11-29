@@ -84,7 +84,6 @@ const Header: React.FC = () => {
                        <a 
                           href="#" 
                           onClick={(e) => { e.preventDefault(); setActiveCategory('lab'); }}
-                          onMouseEnter={() => setActiveCategory('lab')}
                           className={`group w-full md:w-[300px] h-[80px] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${
                               activeCategory === 'lab' ? 'bg-[#3b4050]' : 'bg-[#2a2e3a] hover:bg-[#3b4050]'
                           }`}
@@ -98,7 +97,6 @@ const Header: React.FC = () => {
                        {/* Item 2 */}
                        <a 
                           href="#" 
-                          onMouseEnter={() => setActiveCategory('industrial')}
                           className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                        >
                            <span className="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
@@ -110,7 +108,6 @@ const Header: React.FC = () => {
                        {/* Item 3 */}
                        <a 
                           href="#" 
-                          onMouseEnter={() => setActiveCategory('tunnel')}
                           className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                        >
                            <span className="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
@@ -122,7 +119,6 @@ const Header: React.FC = () => {
                        {/* Item 4 */}
                        <a 
                           href="#" 
-                          onMouseEnter={() => setActiveCategory('high-temp')}
                           className="group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                        >
                            <span className="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
