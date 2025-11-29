@@ -135,7 +135,7 @@ const Header: React.FC = () => {
                                {/* Image */}
                                <div className="w-full lg:w-1/2 flex justify-center">
                                    <img 
-                                      src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/iNtpTKAmN6.png" 
+                                      src="Img/imglab.png" 
                                       alt="Лабораторные печи" 
                                       className="max-w-full h-auto max-h-[300px] object-contain"
                                    />
