@@ -34,7 +34,9 @@ const Header: React.FC = () => {
                   <button
                     key={item.label}
                     onClick={() => setIsCatalogOpen(!isCatalogOpen)}
-                    className="font-display text-xl tracking-wider text-white border border-white/50 bg-white/10 px-4 py-2 rounded-md transition-colors hover:bg-white/20 flex items-center gap-2"
+                    className={`font-display text-xl tracking-wider px-3 py-2 rounded-md transition-colors flex items-center gap-2 ${
+                        isCatalogOpen ? 'text-[#6B809B]' : 'text-white hover:text-gray-300'
+                    }`}
                   >
                     {item.label}
                   </button>

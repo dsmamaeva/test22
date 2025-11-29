@@ -104,7 +104,7 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <!-- Catalog Button (Toggles Dropdown) -->
-                        <button id="catalog-btn" class="font-display text-xl tracking-wider text-white border border-white/50 bg-white/10 px-4 py-2 rounded-md transition-colors hover:bg-white/20 flex items-center gap-2">
+                        <button id="catalog-btn" class="font-display text-xl tracking-wider text-white hover:text-gray-300 px-3 py-2 rounded-md transition-colors flex items-center gap-2">
                             Каталог
                         </button>
                         
@@ -510,12 +510,26 @@
         if (catalogBtn && catalogDropdown) {
              catalogBtn.addEventListener('click', (e) => {
                  e.stopPropagation();
-                 catalogDropdown.classList.toggle('hidden');
+                 const isHidden = catalogDropdown.classList.contains('hidden');
+                 if (isHidden) {
+                     catalogDropdown.classList.remove('hidden');
+                     // Active state
+                     catalogBtn.classList.remove('text-white', 'hover:text-gray-300');
+                     catalogBtn.classList.add('text-[#6B809B]');
+                 } else {
+                     catalogDropdown.classList.add('hidden');
+                     // Inactive state
+                     catalogBtn.classList.remove('text-[#6B809B]');
+                     catalogBtn.classList.add('text-white', 'hover:text-gray-300');
+                 }
              });
 
              document.addEventListener('click', (e) => {
                  if (!catalogDropdown.contains(e.target) && !catalogBtn.contains(e.target)) {
                      catalogDropdown.classList.add('hidden');
+                     // Reset to inactive
+                     catalogBtn.classList.remove('text-[#6B809B]');
+                     catalogBtn.classList.add('text-white', 'hover:text-gray-300');
                  }
              });
         }
