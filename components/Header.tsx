@@ -156,7 +156,7 @@ const Header: React.FC = () => {
                              <p className="text-gray-300 text-lg leading-relaxed">
                                 Серия напольных высокотемпературных печей с рабочим объемом камеры от 16 до 276 литров и температурами до 1800°C.
                              </p>
-                             <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                             <a href="vtemp.html" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                  Перейти в раздел
                              </a>
                          </div>
