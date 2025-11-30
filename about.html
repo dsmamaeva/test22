@@ -93,7 +93,7 @@
 
                         <a href="servis.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
                         <a href="about.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
+                        <a href="contacts.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
                     </div>
                 </div>
 
@@ -229,7 +229,7 @@
                 <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Решения</a>
                 <a href="servis.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Сервис</a>
                 <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">О нас</a>
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Контакты</a>
+                <a href="contacts.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Контакты</a>
             </div>
         </div>
     </header>
@@ -352,10 +352,14 @@
         const solutionsDropdown = document.getElementById('solutions-dropdown');
 
         // Items logic
-        const solItemCombo = document.getElementById('sol-item-combo');
-        const solItemBitumen = document.getElementById('sol-item-bitumen');
-        const detailsSolCombo = document.getElementById('details-sol-combo');
-        const detailsSolBitumen = document.getElementById('details-sol-bitumen');
+        const menuItemLab = document.getElementById('menu-item-lab');
+        const detailsLab = document.getElementById('details-lab');
+        const menuItemInd = document.getElementById('menu-item-ind');
+        const detailsInd = document.getElementById('details-ind');
+        const menuItemTun = document.getElementById('menu-item-tun');
+        const detailsTun = document.getElementById('details-tun');
+        const menuItemHigh = document.getElementById('menu-item-high');
+        const detailsHigh = document.getElementById('details-high');
 
         if (btn && menu) {
             btn.addEventListener('click', () => {
@@ -369,6 +373,15 @@
                     iconOpen.classList.remove('hidden');
                     iconClose.classList.add('hidden');
                 }
+            });
+        }
+
+        // Toggle mobile catalog submenu
+        const mobileCatalogBtn = document.getElementById('mobile-catalog-btn');
+        const mobileCatalogSubmenu = document.getElementById('mobile-catalog-submenu');
+        if (mobileCatalogBtn && mobileCatalogSubmenu) {
+            mobileCatalogBtn.addEventListener('click', () => {
+                 mobileCatalogSubmenu.classList.toggle('hidden');
             });
         }
 
@@ -447,6 +460,81 @@
         });
 
         // Helpers to manage details
+        function hideAllDetails() {
+            const details = document.querySelectorAll('.details-content');
+            details.forEach(detail => detail.classList.add('hidden'));
+            
+            const links = document.querySelectorAll('#catalog-menu-items .catalog-menu-link');
+            links.forEach(link => {
+                link.classList.remove('bg-[#3b4050]');
+                link.classList.add('bg-[#2a2e3a]');
+                
+                // Reset icon color
+                const icon = link.querySelector('.text-white');
+                if (icon) {
+                    icon.classList.remove('text-white');
+                    icon.classList.add('text-gray-400');
+                }
+            });
+        }
+
+        function activateMenuLink(link) {
+            link.classList.remove('bg-[#2a2e3a]');
+            link.classList.add('bg-[#3b4050]');
+            
+            const iconDiv = link.querySelector('div');
+            if (iconDiv) {
+                iconDiv.classList.remove('text-gray-400');
+                iconDiv.classList.add('text-white');
+            }
+        }
+
+        // Handle interaction with Laboratory Ovens item
+        if (menuItemLab && detailsLab) {
+            menuItemLab.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                hideAllDetails();
+                detailsLab.classList.remove('hidden');
+                activateMenuLink(menuItemLab);
+            });
+        }
+
+        // Handle interaction with Industrial Ovens item
+        if (menuItemInd && detailsInd) {
+            menuItemInd.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                hideAllDetails();
+                detailsInd.classList.remove('hidden');
+                activateMenuLink(menuItemInd);
+            });
+        }
+
+        // Handle interaction with Tunnel Ovens item
+        if (menuItemTun && detailsTun) {
+            menuItemTun.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                hideAllDetails();
+                detailsTun.classList.remove('hidden');
+                activateMenuLink(menuItemTun);
+            });
+        }
+
+        // Handle interaction with High Temp Ovens item
+        if (menuItemHigh && detailsHigh) {
+            menuItemHigh.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                hideAllDetails();
+                detailsHigh.classList.remove('hidden');
+                activateMenuLink(menuItemHigh);
+            });
+        }
+
+        // Solutions Interaction
+        const solItemCombo = document.getElementById('sol-item-combo');
+        const solItemBitumen = document.getElementById('sol-item-bitumen');
+        const detailsSolCombo = document.getElementById('details-sol-combo');
+        const detailsSolBitumen = document.getElementById('details-sol-bitumen');
+
         function hideAllSolDetails() {
             const details = document.querySelectorAll('.details-sol-content');
             details.forEach(detail => detail.classList.add('hidden'));
@@ -466,14 +554,18 @@
         if (solItemCombo) {
             solItemCombo.addEventListener('click', (e) => {
                 e.preventDefault();
-                window.location.href = 'komb.html';
+                hideAllSolDetails();
+                if(detailsSolCombo) detailsSolCombo.classList.remove('hidden');
+                activateMenuLink(solItemCombo);
             });
         }
         
         if (solItemBitumen) {
              solItemBitumen.addEventListener('click', (e) => {
                  e.preventDefault();
-                 window.location.href = 'bit.html';
+                 hideAllSolDetails();
+                 if (detailsSolBitumen) detailsSolBitumen.classList.remove('hidden');
+                 activateMenuLink(solItemBitumen);
              });
         }
     </script>

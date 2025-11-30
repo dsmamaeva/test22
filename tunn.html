@@ -87,10 +87,13 @@
                             Каталог
                         </button>
                         
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Решения</a>
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
+                        <button id="solutions-btn" class="font-display text-xl tracking-wider text-white hover:text-gray-300 px-3 py-2 rounded-md transition-colors flex items-center gap-2">
+                            Решения
+                        </button>
+
+                        <a href="servis.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
+                        <a href="about.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
+                        <a href="contacts.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
                     </div>
                 </div>
 
@@ -114,7 +117,7 @@
                     <!-- Left: Menu Items -->
                     <div class="flex flex-col items-start gap-4 shrink-0" id="catalog-menu-items">
                          <!-- Item 1: Лабораторные печи -->
-                        <a href="#" id="menu-item-lab" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="lab.html" id="menu-item-lab" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Лабораторные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -122,7 +125,7 @@
                         </a>
 
                         <!-- Item 2: Промышленные печи -->
-                        <a href="#" id="menu-item-ind" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="prom.html" id="menu-item-ind" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -130,7 +133,7 @@
                         </a>
 
                         <!-- Item 3: Туннельные печи -->
-                        <a href="#" id="menu-item-tun" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="tunn.html" id="menu-item-tun" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -138,7 +141,7 @@
                         </a>
 
                         <!-- Item 4: Высокотемпературные печи -->
-                        <a href="#" id="menu-item-high" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="vtemp.html" id="menu-item-high" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -211,7 +214,7 @@
                                 <p class="text-gray-300 text-lg leading-relaxed">
                                     Серия напольных высокотемпературных печей с рабочим объемом камеры от 16 до 276 литров и температурами до 1800°C.
                                 </p>
-                                <a href="#" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                <a href="vtemp.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                     Перейти в раздел
                                 </a>
                             </div>
@@ -224,302 +227,4 @@
 
         <!-- Mobile Nav -->
         <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <button id="mobile-catalog-btn" class="w-full text-left text-white bg-gray-900 block px-3 py-2 rounded-md text-xl font-display tracking-wider flex justify-between items-center">
-                    Каталог
-                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
-                </button>
-                <!-- Mobile Catalog Submenu -->
-                <div id="mobile-catalog-submenu" class="hidden pl-4 space-y-2 py-2 bg-gray-900/50 rounded-md mt-1">
-                     <a href="lab.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Лабораторные печи</a>
-                     <a href="prom.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Промышленные печи</a>
-                     <a href="tunn.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Туннельные печи</a>
-                     <a href="#" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Высокотемпературные печи</a>
-                </div>
-
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Решения</a>
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Сервис</a>
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">О нас</a>
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Контакты</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content for Tunnel Ovens -->
-    <main class="flex-grow pt-10 pb-20">
-        <div class="container mx-auto px-4">
-             <!-- Top Section with Image and Text -->
-             <div class="flex flex-col lg:flex-row gap-8 items-start mb-20">
-                 <!-- Image (Left) -->
-                 <div class="w-full lg:w-5/12">
-                      <div class="overflow-hidden rounded shadow-lg border border-gray-700">
-                          <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/aZNxtrQAOf.png" alt="Туннельная печь" class="w-full h-auto object-cover">
-                      </div>
-                 </div>
-
-                 <!-- Description (Right) -->
-                 <div class="w-full lg:w-7/12 text-gray-200">
-                      <h1 class="font-display text-4xl md:text-5xl uppercase mb-6 text-white tracking-wide">ТУННЕЛЬНЫЕ ПРОХОДНЫЕ ПЕЧИ</h1>
-                      
-                      <p class="mb-6 leading-relaxed text-gray-300 text-lg">
-                          Многозонные проходные печи с электрическим обогревом применяются в производственных линиях, где требуется 
-                          непрерывность процесса обжига в течении длительного времени. Конструкция туннели с несколькими зонами 
-                          индивидуального нагрева обеспечивает плавное увеличение и снижение температуры вдоль рабочего пространства.
-                          <br><br>
-                          Проталкивание садки через туннель проходит в автоматическом режиме с заданной оператором скоростью, 
-                          на выходе из последней зоны нагрева садка попадает в охлаждаемый объем для ускоренного остывания.
-                      </p>
-
-                      <h2 class="font-display text-2xl uppercase mb-4 text-white tracking-wide">ОСНОВНЫЕ ВОЗМОЖНОСТИ:</h2>
-                      <ul class="list-disc pl-5 mb-8 space-y-2 text-gray-300 marker:text-gray-500">
-                          <li>Корпус печи с вентиляцией стенок для обеспечения малой температуры боковых поверхностей</li>
-                          <li>Многослойная изоляция туннели</li>
-                          <li>Проволочные нагревательные элементы</li>
-                          <li>Автоматическая подача садки с помощью толкателя</li>
-                          <li>Программное управление технологическим процессом обжига</li>
-                          <li>Архивирование технологических данных</li>
-                      </ul>
-                 </div>
-             </div>
-
-             <!-- Model Range Section -->
-             <div class="relative mb-12 flex items-center">
-                 <div class="h-px bg-gray-600 flex-grow"></div>
-                 <h2 class="mx-4 font-display text-3xl uppercase tracking-wider text-white">МОДЕЛЬНЫЙ РЯД</h2>
-                 <div class="h-px bg-gray-600 flex-grow"></div>
-             </div>
-
-             <!-- Table -->
-             <div class="overflow-x-auto rounded border border-gray-600 shadow-xl bg-[#2a2e3a] mb-8">
-                 <table class="w-full text-xs md:text-sm text-center border-collapse min-w-[800px]">
-                     <thead>
-                         <tr class="bg-[#323642] text-white font-bold border-b border-gray-600 h-16">
-                             <th class="p-3 border-r border-gray-600 align-middle w-[10%]">Модель</th>
-                             <th class="p-3 border-r border-gray-600 align-middle w-[12%]">Количество зон</th>
-                             <th class="p-3 border-r border-gray-600 align-middle w-[12%]">Максимальная<br>температура</th>
-                             <th class="p-3 border-r border-gray-600 align-middle w-[12%]">Электрическая<br>мощность</th>
-                             <th class="p-3 border-r border-gray-600 align-middle w-[14%]">Способ<br>перемещения<br>садки</th>
-                             <th class="p-3 border-r border-gray-600 align-middle w-[10%]">Ширина</th>
-                             <th class="p-3 border-r border-gray-600 align-middle w-[10%]">Глубина</th>
-                             <th class="p-3 border-r border-gray-600 align-middle w-[10%]">Высота</th>
-                             <th class="p-3 align-middle w-[10%]">Вес установки</th>
-                         </tr>
-                     </thead>
-                     <tbody class="text-gray-200">
-                         <!-- Row 1 -->
-                         <tr class="hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium h-16">КЛПК</td>
-                             <td class="p-3 border-r border-gray-600">8 зон нагрева + 1<br>охлаждения</td>
-                             <td class="p-3 border-r border-gray-600">1250 °C</td>
-                             <td class="p-3 border-r border-gray-600">40 кВт</td>
-                             <td class="p-3 border-r border-gray-600">Толкатель</td>
-                             <td class="p-3 border-r border-gray-600">800 мм</td>
-                             <td class="p-3 border-r border-gray-600">7 000 мм</td>
-                             <td class="p-3 border-r border-gray-600">2 000 мм</td>
-                             <td class="p-3">1 200 кг</td>
-                         </tr>
-                     </tbody>
-                 </table>
-             </div>
-        </div>
-    </main>
-
-    <!-- Contact Form (Reused) -->
-    <section class="relative w-full py-20 overflow-hidden mt-auto">
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="Img/back.png" alt="" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/50"></div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto bg-black/40 backdrop-blur-sm border border-gray-700 p-8 md:p-12 rounded-2xl shadow-2xl">
-              
-              <div class="text-center mb-10">
-                <h2 class="font-display text-4xl md:text-5xl mb-4 text-white">Остались вопросы?</h2>
-                <p class="text-gray-400 md:text-lg max-w-2xl mx-auto">
-                  Вы можете быстро получить консультацию. Для этого напишите на почту <a href="mailto:stanislavpolyanskikh@yandex.ru" class="text-white underline hover:text-gray-300">stanislavpolyanskikh@yandex.ru</a> или свяжитесь через форму обратной связи.
-                </p>
-              </div>
-
-              <form class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="space-y-2">
-                    <label for="name" class="block font-display text-xl uppercase text-gray-300">имя *</label>
-                    <input type="text" id="name" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md" placeholder="Ваше имя">
-                  </div>
-                  <div class="space-y-2">
-                    <label for="phone" class="block font-display text-xl uppercase text-gray-300">Номер телефона *</label>
-                    <input type="tel" id="phone" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md" placeholder="+7 (___) ___-__-__">
-                  </div>
-                </div>
-
-                <div class="space-y-2">
-                  <label for="message" class="block font-display text-xl uppercase text-gray-300">Ваш вопрос*</label>
-                  <textarea id="message" rows="4" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md resize-none" placeholder="Опишите вашу задачу..."></textarea>
-                </div>
-
-                <div class="flex justify-center pt-4">
-                  <button type="submit" class="w-full md:w-auto px-12 py-4 bg-gray-700 hover:bg-gray-600 text-white font-display text-xl uppercase tracking-widest rounded transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Задать вопрос
-                  </button>
-                </div>
-              </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer (Reused) -->
-    <footer class="bg-black py-8 text-center text-gray-600 text-sm">
-        <div class="container mx-auto px-4">
-            <p>&copy; 2024 AVT Industrial Solutions. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Mobile Menu Toggle Logic
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const iconOpen = document.getElementById('icon-menu');
-        const iconClose = document.getElementById('icon-close');
-        
-        // Desktop Dropdown Logic
-        const catalogBtn = document.getElementById('catalog-btn');
-        const catalogDropdown = document.getElementById('catalog-dropdown');
-
-        // Items logic
-        const menuItemLab = document.getElementById('menu-item-lab');
-        const detailsLab = document.getElementById('details-lab');
-        const menuItemInd = document.getElementById('menu-item-ind');
-        const detailsInd = document.getElementById('details-ind');
-        const menuItemTun = document.getElementById('menu-item-tun');
-        const detailsTun = document.getElementById('details-tun');
-        const menuItemHigh = document.getElementById('menu-item-high');
-        const detailsHigh = document.getElementById('details-high');
-
-        if (btn && menu) {
-            btn.addEventListener('click', () => {
-                const isHidden = menu.classList.contains('hidden');
-                if (isHidden) {
-                    menu.classList.remove('hidden');
-                    iconOpen.classList.add('hidden');
-                    iconClose.classList.remove('hidden');
-                } else {
-                    menu.classList.add('hidden');
-                    iconOpen.classList.remove('hidden');
-                    iconClose.classList.add('hidden');
-                }
-            });
-        }
-
-        // Toggle mobile catalog submenu
-        const mobileCatalogBtn = document.getElementById('mobile-catalog-btn');
-        const mobileCatalogSubmenu = document.getElementById('mobile-catalog-submenu');
-        if (mobileCatalogBtn && mobileCatalogSubmenu) {
-            mobileCatalogBtn.addEventListener('click', () => {
-                 mobileCatalogSubmenu.classList.toggle('hidden');
-            });
-        }
-
-        if (catalogBtn && catalogDropdown) {
-             catalogBtn.addEventListener('click', (e) => {
-                 e.stopPropagation();
-                 const isHidden = catalogDropdown.classList.contains('hidden');
-                 if (isHidden) {
-                     catalogDropdown.classList.remove('hidden');
-                     // Active state
-                     catalogBtn.classList.remove('text-white', 'hover:text-gray-300');
-                     catalogBtn.classList.add('text-[#6B809B]');
-                 } else {
-                     catalogDropdown.classList.add('hidden');
-                     // Inactive state
-                     catalogBtn.classList.remove('text-[#6B809B]');
-                     catalogBtn.classList.add('text-white', 'hover:text-gray-300');
-                 }
-             });
-
-             document.addEventListener('click', (e) => {
-                 if (!catalogDropdown.contains(e.target) && !catalogBtn.contains(e.target)) {
-                     catalogDropdown.classList.add('hidden');
-                     // Reset to inactive
-                     catalogBtn.classList.remove('text-[#6B809B]');
-                     catalogBtn.classList.add('text-white', 'hover:text-gray-300');
-                 }
-             });
-        }
-
-        // Helpers to manage details
-        function hideAllDetails() {
-            const details = document.querySelectorAll('.details-content');
-            details.forEach(detail => detail.classList.add('hidden'));
-            
-            const links = document.querySelectorAll('.catalog-menu-link');
-            links.forEach(link => {
-                link.classList.remove('bg-[#3b4050]');
-                link.classList.add('bg-[#2a2e3a]');
-                
-                // Reset icon color
-                const icon = link.querySelector('.text-white');
-                if (icon) {
-                    icon.classList.remove('text-white');
-                    icon.classList.add('text-gray-400');
-                }
-            });
-        }
-
-        function activateMenuLink(link) {
-            link.classList.remove('bg-[#2a2e3a]');
-            link.classList.add('bg-[#3b4050]');
-            
-            const iconDiv = link.querySelector('div');
-            if (iconDiv) {
-                iconDiv.classList.remove('text-gray-400');
-                iconDiv.classList.add('text-white');
-            }
-        }
-
-        // Handle interaction with Laboratory Ovens item
-        if (menuItemLab && detailsLab) {
-            menuItemLab.addEventListener('click', (e) => {
-                e.preventDefault(); 
-                hideAllDetails();
-                detailsLab.classList.remove('hidden');
-                activateMenuLink(menuItemLab);
-            });
-        }
-
-        // Handle interaction with Industrial Ovens item
-        if (menuItemInd && detailsInd) {
-            menuItemInd.addEventListener('click', (e) => {
-                e.preventDefault(); 
-                hideAllDetails();
-                detailsInd.classList.remove('hidden');
-                activateMenuLink(menuItemInd);
-            });
-        }
-
-        // Handle interaction with Tunnel Ovens item
-        if (menuItemTun && detailsTun) {
-            menuItemTun.addEventListener('click', (e) => {
-                e.preventDefault(); 
-                hideAllDetails();
-                detailsTun.classList.remove('hidden');
-                activateMenuLink(menuItemTun);
-            });
-        }
-
-        // Handle interaction with High Temp Ovens item
-        if (menuItemHigh && detailsHigh) {
-            menuItemHigh.addEventListener('click', (e) => {
-                e.preventDefault(); 
-                hideAllDetails();
-                detailsHigh.classList.remove('hidden');
-                activateMenuLink(menuItemHigh);
-            });
-        }
-    </script>
-</body>
-</html>
+            <div class="px-2 pt-2 pb-3 space

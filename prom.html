@@ -87,10 +87,13 @@
                             Каталог
                         </button>
                         
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Решения</a>
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
+                        <button id="solutions-btn" class="font-display text-xl tracking-wider text-white hover:text-gray-300 px-3 py-2 rounded-md transition-colors flex items-center gap-2">
+                            Решения
+                        </button>
+
+                        <a href="servis.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
+                        <a href="about.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
+                        <a href="contacts.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
                     </div>
                 </div>
 
@@ -114,7 +117,7 @@
                     <!-- Left: Menu Items -->
                     <div class="flex flex-col items-start gap-4 shrink-0" id="catalog-menu-items">
                          <!-- Item 1: Лабораторные печи -->
-                        <a href="#" id="menu-item-lab" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="lab.html" id="menu-item-lab" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Лабораторные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -122,7 +125,7 @@
                         </a>
 
                         <!-- Item 2: Промышленные печи -->
-                        <a href="#" id="menu-item-ind" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="prom.html" id="menu-item-ind" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -130,7 +133,7 @@
                         </a>
 
                         <!-- Item 3: Туннельные печи -->
-                        <a href="#" id="menu-item-tun" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="tunn.html" id="menu-item-tun" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -138,7 +141,7 @@
                         </a>
 
                         <!-- Item 4: Высокотемпературные печи -->
-                        <a href="#" id="menu-item-high" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="vtemp.html" id="menu-item-high" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
@@ -194,7 +197,7 @@
                                 <p class="text-gray-300 text-lg leading-relaxed">
                                     Многозонные проходные печи с электрическим обогревом применяются в производственных линиях, где требуется непрерывность процесса обжига в течении длительного времени.
                                 </p>
-                                <a href="#" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                <a href="tunn.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                     Перейти в раздел
                                 </a>
                             </div>
@@ -211,8 +214,70 @@
                                 <p class="text-gray-300 text-lg leading-relaxed">
                                     Серия напольных высокотемпературных печей с рабочим объемом камеры от 16 до 276 литров и температурами до 1800°C.
                                 </p>
-                                <a href="#" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                <a href="vtemp.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                     Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solutions Dropdown (Overlay) -->
+        <div id="solutions-dropdown" class="hidden absolute top-full left-0 w-full bg-black border-b border-gray-700 shadow-2xl z-40">
+            <div class="container mx-auto px-4 py-8">
+                <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
+                    
+                    <!-- Left: Menu Items -->
+                    <div class="flex flex-col items-start gap-4 shrink-0" id="solutions-menu-items">
+                        <a href="komb.html" id="sol-item-combo" class="catalog-menu-link group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                            <span class="font-display text-lg md:text-xl text-white tracking-wide uppercase">Комбинированные камерные печи</span>
+                            <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
+                        <a href="bit.html" id="sol-item-bitumen" class="catalog-menu-link group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                            <span class="font-display text-lg md:text-xl text-white tracking-wide uppercase">Печи выжигания битума</span>
+                            <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Right: Content Details (Initially hidden) -->
+                    <div id="solutions-details" class="flex-grow hidden md:block relative min-h-[350px]">
+                        <!-- Combined Chamber Furnaces Details -->
+                        <div id="details-sol-combo" class="details-sol-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <!-- Image -->
+                            <div class="w-full lg:w-1/2 flex justify-center">
+                                <img src="Img/imglab.png" alt="Комбинированные камерные печи" class="max-w-full h-auto max-h-[300px] object-contain">
+                            </div>
+                            <!-- Text Content -->
+                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p class="text-gray-300 text-lg leading-relaxed">
+                                   Специальное исполнение камерной печи для совмещения процессов сушки и обжига за один цикл.
+                                </p>
+                                <a href="komb.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                   Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Bitumen Burnout Furnaces Details -->
+                        <div id="details-sol-bitumen" class="details-sol-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <!-- Image -->
+                            <div class="w-full lg:w-1/2 flex justify-center">
+                                <img src="Img/imglab.png" alt="Печи выжигания битума" class="max-w-full h-auto max-h-[300px] object-contain">
+                            </div>
+                            <!-- Text Content -->
+                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p class="text-gray-300 text-lg leading-relaxed">
+                                   Печь предназначена для определения содержания битума в асфальтобетоне методом выжигания. Оснащена термостойким корпусом, нагревательной камерой с системой удаления продуктов горения, встроенными весами и сенсорным контроллером для автоматического контроля температуры и массы.
+                                </p>
+                                <a href="bit.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                   Перейти в раздел
                                 </a>
                             </div>
                         </div>
@@ -233,14 +298,14 @@
                 <div id="mobile-catalog-submenu" class="hidden pl-4 space-y-2 py-2 bg-gray-900/50 rounded-md mt-1">
                      <a href="lab.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Лабораторные печи</a>
                      <a href="prom.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Промышленные печи</a>
-                     <a href="#" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Туннельные печи</a>
-                     <a href="#" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Высокотемпературные печи</a>
+                     <a href="tunn.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Туннельные печи</a>
+                     <a href="vtemp.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Высокотемпературные печи</a>
                 </div>
 
                 <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Решения</a>
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Сервис</a>
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">О нас</a>
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Контакты</a>
+                <a href="servis.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Сервис</a>
+                <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">О нас</a>
+                <a href="contacts.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Контакты</a>
             </div>
         </div>
     </header>
@@ -524,6 +589,10 @@
         // Desktop Dropdown Logic
         const catalogBtn = document.getElementById('catalog-btn');
         const catalogDropdown = document.getElementById('catalog-dropdown');
+        
+        // Solutions Dropdown Logic
+        const solutionsBtn = document.getElementById('solutions-btn');
+        const solutionsDropdown = document.getElementById('solutions-dropdown');
 
         // Items logic
         const menuItemLab = document.getElementById('menu-item-lab');
@@ -559,9 +628,20 @@
             });
         }
 
+        // Catalog Button Logic
         if (catalogBtn && catalogDropdown) {
              catalogBtn.addEventListener('click', (e) => {
                  e.stopPropagation();
+                 
+                 // Close solutions if open
+                 if (solutionsDropdown && !solutionsDropdown.classList.contains('hidden')) {
+                     solutionsDropdown.classList.add('hidden');
+                     if (solutionsBtn) {
+                         solutionsBtn.classList.remove('text-[#6B809B]');
+                         solutionsBtn.classList.add('text-white', 'hover:text-gray-300');
+                     }
+                 }
+
                  const isHidden = catalogDropdown.classList.contains('hidden');
                  if (isHidden) {
                      catalogDropdown.classList.remove('hidden');
@@ -575,23 +655,59 @@
                      catalogBtn.classList.add('text-white', 'hover:text-gray-300');
                  }
              });
-
-             document.addEventListener('click', (e) => {
-                 if (!catalogDropdown.contains(e.target) && !catalogBtn.contains(e.target)) {
+        }
+        
+        // Solutions Button Logic
+        if (solutionsBtn && solutionsDropdown) {
+             solutionsBtn.addEventListener('click', (e) => {
+                 e.stopPropagation();
+                 
+                 // Close catalog if open
+                 if (catalogDropdown && !catalogDropdown.classList.contains('hidden')) {
                      catalogDropdown.classList.add('hidden');
-                     // Reset to inactive
-                     catalogBtn.classList.remove('text-[#6B809B]');
-                     catalogBtn.classList.add('text-white', 'hover:text-gray-300');
+                     if (catalogBtn) {
+                         catalogBtn.classList.remove('text-[#6B809B]');
+                         catalogBtn.classList.add('text-white', 'hover:text-gray-300');
+                     }
+                 }
+
+                 const isHidden = solutionsDropdown.classList.contains('hidden');
+                 if (isHidden) {
+                     solutionsDropdown.classList.remove('hidden');
+                     // Active state
+                     solutionsBtn.classList.remove('text-white', 'hover:text-gray-300');
+                     solutionsBtn.classList.add('text-[#6B809B]');
+                 } else {
+                     solutionsDropdown.classList.add('hidden');
+                     // Inactive state
+                     solutionsBtn.classList.remove('text-[#6B809B]');
+                     solutionsBtn.classList.add('text-white', 'hover:text-gray-300');
                  }
              });
         }
+
+        // Close dropdowns on click outside
+        document.addEventListener('click', (e) => {
+             // Close catalog
+             if (catalogDropdown && !catalogDropdown.contains(e.target) && catalogBtn && !catalogBtn.contains(e.target)) {
+                 catalogDropdown.classList.add('hidden');
+                 catalogBtn.classList.remove('text-[#6B809B]');
+                 catalogBtn.classList.add('text-white', 'hover:text-gray-300');
+             }
+             // Close solutions
+             if (solutionsDropdown && !solutionsDropdown.contains(e.target) && solutionsBtn && !solutionsBtn.contains(e.target)) {
+                 solutionsDropdown.classList.add('hidden');
+                 solutionsBtn.classList.remove('text-[#6B809B]');
+                 solutionsBtn.classList.add('text-white', 'hover:text-gray-300');
+             }
+        });
 
         // Helpers to manage details
         function hideAllDetails() {
             const details = document.querySelectorAll('.details-content');
             details.forEach(detail => detail.classList.add('hidden'));
             
-            const links = document.querySelectorAll('.catalog-menu-link');
+            const links = document.querySelectorAll('#catalog-menu-items .catalog-menu-link');
             links.forEach(link => {
                 link.classList.remove('bg-[#3b4050]');
                 link.classList.add('bg-[#2a2e3a]');
@@ -654,6 +770,42 @@
                 detailsHigh.classList.remove('hidden');
                 activateMenuLink(menuItemHigh);
             });
+        }
+
+        // Solutions Interaction
+        const solItemCombo = document.getElementById('sol-item-combo');
+        const solItemBitumen = document.getElementById('sol-item-bitumen');
+        const detailsSolCombo = document.getElementById('details-sol-combo');
+        const detailsSolBitumen = document.getElementById('details-sol-bitumen');
+
+        function hideAllSolDetails() {
+            const details = document.querySelectorAll('.details-sol-content');
+            details.forEach(detail => detail.classList.add('hidden'));
+
+            const links = document.querySelectorAll('#solutions-menu-items .catalog-menu-link');
+            links.forEach(link => {
+                 link.classList.remove('bg-[#3b4050]');
+                 link.classList.add('bg-[#2a2e3a]');
+                 const icon = link.querySelector('.text-white');
+                 if (icon) {
+                    icon.classList.remove('text-white');
+                    icon.classList.add('text-gray-400');
+                 }
+            });
+        }
+
+        if (solItemCombo) {
+            solItemCombo.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'komb.html';
+            });
+        }
+        
+        if (solItemBitumen) {
+             solItemBitumen.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 window.location.href = 'bit.html';
+             });
         }
     </script>
 </body>
