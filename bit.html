@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVT - Комбинированные камерные печи</title>
+    <title>AVT - Печи выжигания битума</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Скрипт иконок Lucide -->
@@ -90,7 +90,7 @@
                         <button id="solutions-btn" class="font-display text-xl tracking-wider text-white hover:text-gray-300 px-3 py-2 rounded-md transition-colors flex items-center gap-2">
                             Решения
                         </button>
-                        
+
                         <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
                         <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
                         <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
@@ -111,115 +111,39 @@
         <!-- Catalog Dropdown (Overlay) -->
         <div id="catalog-dropdown" class="hidden absolute top-full left-0 w-full bg-black border-b border-gray-700 shadow-2xl z-40">
             <div class="container mx-auto px-4 py-8">
-                <!-- Flex container for Menu Items (Left) and Content Panel (Right) -->
                 <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
-                    
                     <!-- Left: Menu Items -->
                     <div class="flex flex-col items-start gap-4 shrink-0" id="catalog-menu-items">
-                         <!-- Item 1: Лабораторные печи -->
-                        <a href="#" id="menu-item-lab" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="lab.html" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Лабораторные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
                             </div>
                         </a>
-
-                        <!-- Item 2: Промышленные печи -->
-                        <a href="#" id="menu-item-ind" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="prom.html" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Промышленные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
                             </div>
                         </a>
-
-                        <!-- Item 3: Туннельные печи -->
-                        <a href="#" id="menu-item-tun" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="tunn.html" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Туннельные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
                             </div>
                         </a>
-
-                        <!-- Item 4: Высокотемпературные печи -->
-                        <a href="#" id="menu-item-high" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <a href="vtemp.html" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                             <span class="font-display text-2xl text-white tracking-wide">Высокотемпературные печи</span>
                             <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
                                 <i data-lucide="chevron-right" class="w-6 h-6"></i>
                             </div>
                         </a>
                     </div>
-
-                    <!-- Right: Content Details (Initially hidden, shown on interaction) -->
+                    <!-- Right: Content Details (Static Links for now in subpages) -->
                     <div id="catalog-details" class="flex-grow hidden md:block relative min-h-[350px]">
-                        
-                        <!-- Laboratory Ovens Details -->
-                        <div id="details-lab" class="details-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
-                            <!-- Image -->
-                            <div class="w-full lg:w-1/2 flex justify-center">
-                                <img src="Img/imglab.png" alt="Лабораторные печи" class="max-w-full h-auto max-h-[300px] object-contain">
-                            </div>
-                            <!-- Text Content -->
-                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
-                                <p class="text-gray-300 text-lg leading-relaxed">
-                                    Линейка настольных печей с объемом рабочего пространства от 3 до 100 литров. Широкий набор опций позволяет использовать печь для процессов с удалением летучих веществ, купелирования, закалки, отжига и нормализации.
-                                </p>
-                                <a href="lab.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
-                                    Перейти в раздел
-                                </a>
-                            </div>
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-display text-2xl uppercase tracking-widest">
+                            Выберите категорию
                         </div>
-
-                        <!-- Industrial Ovens Details -->
-                        <div id="details-ind" class="details-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
-                            <!-- Image -->
-                            <div class="w-full lg:w-1/2 flex justify-center">
-                                <img src="Img/imgprom.png" alt="Промышленные печи" class="max-w-full h-auto max-h-[300px] object-contain">
-                            </div>
-                            <!-- Text Content -->
-                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
-                                <p class="text-gray-300 text-lg leading-relaxed">
-                                    Предназначены для использования в различных отраслях промышленности, включая крупное серийное производство, лаборатории и гончарные мастерские.
-                                </p>
-                                <a href="prom.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
-                                    Перейти в раздел
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Tunnel Ovens Details -->
-                        <div id="details-tun" class="details-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
-                            <!-- Image -->
-                            <div class="w-full lg:w-1/2 flex justify-center">
-                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/aZNxtrQAOf.png" alt="Туннельные печи" class="max-w-full h-auto max-h-[300px] object-contain">
-                            </div>
-                            <!-- Text Content -->
-                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
-                                <p class="text-gray-300 text-lg leading-relaxed">
-                                    Многозонные проходные печи с электрическим обогревом применяются в производственных линиях, где требуется непрерывность процесса обжига в течении длительного времени.
-                                </p>
-                                <a href="tunn.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
-                                    Перейти в раздел
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- High Temp Ovens Details -->
-                        <div id="details-high" class="details-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
-                            <!-- Image -->
-                            <div class="w-full lg:w-1/2 flex justify-center">
-                                <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-11-27/CpBzd9A9Sv.png" alt="Высокотемпературные печи" class="max-w-full h-auto max-h-[300px] object-contain">
-                            </div>
-                            <!-- Text Content -->
-                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
-                                <p class="text-gray-300 text-lg leading-relaxed">
-                                    Серия напольных высокотемпературных печей с рабочим объемом камеры от 16 до 276 литров и температурами до 1800°C.
-                                </p>
-                                <a href="vtemp.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
-                                    Перейти в раздел
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -310,220 +234,46 @@
         </div>
     </header>
 
-    <!-- Main Content for Combined Chamber Furnaces -->
+    <!-- Main Content -->
     <main class="flex-grow pt-10 pb-20">
         <div class="container mx-auto px-4">
-             <!-- Top Section with Images and Text -->
+             <!-- Flex Container -->
              <div class="flex flex-col lg:flex-row gap-8 items-start mb-20">
-                 <!-- Images (Left) -->
-                 <div class="w-full lg:w-5/12 flex flex-col gap-6">
-                      <div class="grid grid-cols-2 gap-4">
-                          <!-- Placeholders using available images, simulating side-by-side view -->
-                          <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
-                              <img src="Img/imgprom.png" alt="Комбинированная камерная печь - внешний вид" class="w-full h-full object-cover">
-                          </div>
-                          <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
-                              <img src="Img/imgprom.png" alt="Комбинированная камерная печь - вид сзади/сбоку" class="w-full h-full object-cover">
-                          </div>
-                      </div>
-                 </div>
-
-                 <!-- Description (Right) -->
+                 <!-- Description (Left) -->
                  <div class="w-full lg:w-7/12 text-gray-200">
-                      <h1 class="font-display text-4xl md:text-5xl uppercase mb-6 text-white tracking-wide">КОМБИНИРОВАННЫЕ КАМЕРНЫЕ ПЕЧИ</h1>
+                      <h1 class="font-display text-4xl md:text-5xl uppercase mb-6 text-white tracking-wide">ПЕЧИ ВЫЖИГАНИЯ БИТУМА</h1>
                       
                       <p class="mb-6 leading-relaxed text-gray-300 text-lg">
-                          Специальная конструкция печи позволяет проводить процессы выжигания (сушки) и спекания за один цикл. 
-                          Камера печи оборудована специальными распределительными трубками для подачи подогретого свежего воздуха. 
-                          Вентиляция камеры подогретым воздухом с заданным расходом позволяет управлять процессом сушки или 
-                          процессом выжигания связующих веществ из керамики. Управление установкой осуществляется с отдельно 
-                          стоящего шкафа управления с ПЛК.
+                          Печь предназначена для определения содержания битума в асфальтобетонной смеси методом выжигания. 
+                          Имеет металлический корпус с термостойкой порошковой краской, камеру с нагревателями и системой 
+                          удаления продуктов горения. Встроенные весы и контроллер с сенсорным дисплеем обеспечивают 
+                          автоматический контроль температуры и массы. Работа возможна по времени или до достижения 
+                          заданного изменения массы.
                       </p>
 
                       <h2 class="font-display text-2xl uppercase mb-4 text-white tracking-wide">ОСНОВНЫЕ ВОЗМОЖНОСТИ:</h2>
                       <ul class="list-disc pl-5 mb-8 space-y-2 text-gray-300 marker:text-gray-500">
-                          <li>Многослойная изоляция камеры и специальная укладка элементов футеровки обеспечивает долговечность печи</li>
-                          <li>Корпус печи с вентиляцией стенок для обеспечения малой температуры боковых поверхностей</li>
-                          <li>Пятисторонний обогрев камеры для равномерного распределения температуры</li>
-                          <li>Размещение спиральных проволочных нагревателей на керамических трубках</li>
-                          <li>Под печи закрыт карбидокремниевой плитой</li>
-                          <li>Автоматизированная заслонка в своде и вентиляционный зонт для подключения к цеховой системе вентиляции</li>
-                          <li>Пакет оборудования для сушки и удаления вяжущих веществ: вентилятор приточного воздуха с фильтром, подогреватель приточного воздуха</li>
-                          <li>Независимая защита от превышения максимальной температуры для защиты садки от перегрева</li>
-                          <li>Архивирование технологических данных</li>
+                          <li>Управление осуществляется через сенсорный дисплей с предустановленным программным обеспечением на русском языке (по запросу доступны и другие языки).</li>
+                          <li>Камера выполнена из нержавеющей стали.</li>
+                          <li>Надежные нагревательные элементы диаметром 8 мм, устойчивые к механическим воздействиям, расположены по бокам и в нижней части камеры.</li>
+                          <li>Встроенные весы обеспечивают непрерывное измерение массы образца.</li>
+                          <li>Автоматический режим выжигания позволяет выполнять расчет процентного содержания битума в образце.</li>
+                          <li>Конструкция предусматривает легкую замену нагревательных элементов без необходимости демонтажа теплоизоляции.</li>
                       </ul>
                  </div>
-             </div>
 
-             <!-- Model Range Section -->
-             <div class="relative mb-12 flex items-center">
-                 <div class="h-px bg-gray-600 flex-grow"></div>
-                 <h2 class="mx-4 font-display text-3xl uppercase tracking-wider text-white">МОДЕЛЬНЫЙ РЯД</h2>
-                 <div class="h-px bg-gray-600 flex-grow"></div>
-             </div>
-
-             <!-- Table 1 -->
-             <div class="overflow-x-auto rounded border border-gray-600 shadow-xl bg-[#2a2e3a] mb-8">
-                 <table class="w-full text-xs md:text-sm text-center border-collapse min-w-[800px]">
-                     <thead>
-                         <tr class="bg-[#323642] text-white font-bold border-b border-gray-600">
-                             <th rowspan="2" class="p-3 border-r border-gray-600 align-middle">МОДЕЛЬ</th>
-                             <th rowspan="2" class="p-3 border-r border-gray-600 align-middle">МАКСИМАЛЬНАЯ<br>ТЕМПЕРАТУРА, °C</th>
-                             <th colspan="3" class="p-3 border-r border-gray-600 border-b bg-[#3a3f4d]">РАЗМЕРЫ КАМЕРЫ, ММ</th>
-                             <th rowspan="2" class="p-3 border-r border-gray-600 align-middle">ОБЪЕМ, Л</th>
-                             <th colspan="3" class="p-3 border-r border-gray-600 border-b bg-[#3a3f4d]">ВНЕШНИЕ ГАБАРИТЫ, ММ</th>
-                             <th rowspan="2" class="p-3 align-middle">ЭЛЕКТРИЧЕСКАЯ<br>МОЩНОСТЬ, КВТ</th>
-                         </tr>
-                         <tr class="bg-[#323642] text-white font-bold border-b border-gray-600">
-                             <th class="p-3 border-r border-gray-600 w-[10%]">ШИРИНА</th>
-                             <th class="p-3 border-r border-gray-600 w-[10%]">ГЛУБИНА</th>
-                             <th class="p-3 border-r border-gray-600 w-[10%]">ВЫСОТА</th>
-                             <th class="p-3 border-r border-gray-600 w-[10%]">ШИРИНА</th>
-                             <th class="p-3 border-r border-gray-600 w-[10%]">ГЛУБИНА</th>
-                             <th class="p-3 border-r border-gray-600 w-[10%]">ВЫСОТА</th>
-                         </tr>
-                     </thead>
-                     <tbody class="text-gray-200">
-                         <!-- Row 1 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H100T13(УС)</td>
-                             <td class="p-3 border-r border-gray-600">100</td>
-                             <td class="p-3 border-r border-gray-600">1300</td>
-                             <td class="p-3 border-r border-gray-600">400</td>
-                             <td class="p-3 border-r border-gray-600">530</td>
-                             <td class="p-3 border-r border-gray-600">460</td>
-                             <td class="p-3 border-r border-gray-600">920</td>
-                             <td class="p-3 border-r border-gray-600">1200</td>
-                             <td class="p-3 border-r border-gray-600">2000</td>
-                             <td class="p-3">30</td>
-                         </tr>
-                         <!-- Row 2 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H200T13(УС)</td>
-                             <td class="p-3 border-r border-gray-600">200</td>
-                             <td class="p-3 border-r border-gray-600">1300</td>
-                             <td class="p-3 border-r border-gray-600">400</td>
-                             <td class="p-3 border-r border-gray-600">530</td>
-                             <td class="p-3 border-r border-gray-600">780</td>
-                             <td class="p-3 border-r border-gray-600">920</td>
-                             <td class="p-3 border-r border-gray-600">1200</td>
-                             <td class="p-3 border-r border-gray-600">2300</td>
-                             <td class="p-3">35</td>
-                         </tr>
-                         <!-- Row 3 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H300T13(УС)</td>
-                             <td class="p-3 border-r border-gray-600">300</td>
-                             <td class="p-3 border-r border-gray-600">1300</td>
-                             <td class="p-3 border-r border-gray-600">450</td>
-                             <td class="p-3 border-r border-gray-600">700</td>
-                             <td class="p-3 border-r border-gray-600">780</td>
-                             <td class="p-3 border-r border-gray-600">970</td>
-                             <td class="p-3 border-r border-gray-600">1350</td>
-                             <td class="p-3 border-r border-gray-600">2300</td>
-                             <td class="p-3">40</td>
-                         </tr>
-                         <!-- Row 4 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H450T13(УС)</td>
-                             <td class="p-3 border-r border-gray-600">450</td>
-                             <td class="p-3 border-r border-gray-600">1300</td>
-                             <td class="p-3 border-r border-gray-600">550</td>
-                             <td class="p-3 border-r border-gray-600">760</td>
-                             <td class="p-3 border-r border-gray-600">1000</td>
-                             <td class="p-3 border-r border-gray-600">1100</td>
-                             <td class="p-3 border-r border-gray-600">1400</td>
-                             <td class="p-3 border-r border-gray-600">2500</td>
-                             <td class="p-3">75</td>
-                         </tr>
-                         <!-- Row 5 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H650T13(УС)</td>
-                             <td class="p-3 border-r border-gray-600">650</td>
-                             <td class="p-3 border-r border-gray-600">1300</td>
-                             <td class="p-3 border-r border-gray-600">660</td>
-                             <td class="p-3 border-r border-gray-600">850</td>
-                             <td class="p-3 border-r border-gray-600">1100</td>
-                             <td class="p-3 border-r border-gray-600">1200</td>
-                             <td class="p-3 border-r border-gray-600">1500</td>
-                             <td class="p-3 border-r border-gray-600">2500</td>
-                             <td class="p-3">90</td>
-                         </tr>
-                     </tbody>
-                 </table>
-             </div>
-
-             <!-- Table 2 (T14 models) -->
-             <div class="overflow-x-auto rounded border border-gray-600 shadow-xl bg-[#2a2e3a]">
-                 <table class="w-full text-xs md:text-sm text-center border-collapse min-w-[800px]">
-                     <tbody class="text-gray-200">
-                         <!-- Row 1 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium w-[10%]">H100T14(УС)</td>
-                             <td class="p-3 border-r border-gray-600 w-[10%]">100</td>
-                             <td class="p-3 border-r border-gray-600 w-[10%]">1400</td>
-                             <td class="p-3 border-r border-gray-600 w-[10%]">400</td>
-                             <td class="p-3 border-r border-gray-600 w-[10%]">530</td>
-                             <td class="p-3 border-r border-gray-600 w-[10%]">460</td>
-                             <td class="p-3 border-r border-gray-600 w-[10%]">920</td>
-                             <td class="p-3 border-r border-gray-600 w-[10%]">1200</td>
-                             <td class="p-3 border-r border-gray-600 w-[10%]">2000</td>
-                             <td class="p-3 w-[10%]">35</td>
-                         </tr>
-                         <!-- Row 2 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H200T14(УС)</td>
-                             <td class="p-3 border-r border-gray-600">200</td>
-                             <td class="p-3 border-r border-gray-600">1400</td>
-                             <td class="p-3 border-r border-gray-600">400</td>
-                             <td class="p-3 border-r border-gray-600">530</td>
-                             <td class="p-3 border-r border-gray-600">780</td>
-                             <td class="p-3 border-r border-gray-600">920</td>
-                             <td class="p-3 border-r border-gray-600">1200</td>
-                             <td class="p-3 border-r border-gray-600">2300</td>
-                             <td class="p-3">40</td>
-                         </tr>
-                         <!-- Row 3 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H300T14(УС)</td>
-                             <td class="p-3 border-r border-gray-600">300</td>
-                             <td class="p-3 border-r border-gray-600">1400</td>
-                             <td class="p-3 border-r border-gray-600">450</td>
-                             <td class="p-3 border-r border-gray-600">700</td>
-                             <td class="p-3 border-r border-gray-600">780</td>
-                             <td class="p-3 border-r border-gray-600">970</td>
-                             <td class="p-3 border-r border-gray-600">1350</td>
-                             <td class="p-3 border-r border-gray-600">2300</td>
-                             <td class="p-3">50</td>
-                         </tr>
-                         <!-- Row 4 -->
-                         <tr class="border-b border-gray-600 hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H450T14(УС)</td>
-                             <td class="p-3 border-r border-gray-600">450</td>
-                             <td class="p-3 border-r border-gray-600">1400</td>
-                             <td class="p-3 border-r border-gray-600">550</td>
-                             <td class="p-3 border-r border-gray-600">760</td>
-                             <td class="p-3 border-r border-gray-600">1000</td>
-                             <td class="p-3 border-r border-gray-600">1100</td>
-                             <td class="p-3 border-r border-gray-600">1400</td>
-                             <td class="p-3 border-r border-gray-600">2500</td>
-                             <td class="p-3">80</td>
-                         </tr>
-                         <!-- Row 5 -->
-                         <tr class="hover:bg-[#323642] transition-colors">
-                             <td class="p-3 border-r border-gray-600 font-medium">H650T14(УС)</td>
-                             <td class="p-3 border-r border-gray-600">650</td>
-                             <td class="p-3 border-r border-gray-600">1400</td>
-                             <td class="p-3 border-r border-gray-600">660</td>
-                             <td class="p-3 border-r border-gray-600">850</td>
-                             <td class="p-3 border-r border-gray-600">1100</td>
-                             <td class="p-3 border-r border-gray-600">1200</td>
-                             <td class="p-3 border-r border-gray-600">1500</td>
-                             <td class="p-3 border-r border-gray-600">2500</td>
-                             <td class="p-3">95</td>
-                         </tr>
-                     </tbody>
-                 </table>
+                 <!-- Images (Right) -->
+                 <div class="w-full lg:w-5/12 flex flex-col gap-6">
+                      <div class="grid grid-cols-2 gap-4">
+                          <!-- Using placeholder images -->
+                          <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
+                              <img src="Img/imglab.png" alt="Печь выжигания битума - внешний вид" class="w-full h-full object-cover">
+                          </div>
+                          <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
+                              <img src="Img/imglab.png" alt="Печь выжигания битума - камера" class="w-full h-full object-cover">
+                          </div>
+                      </div>
+                 </div>
              </div>
         </div>
     </main>

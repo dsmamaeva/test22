@@ -243,7 +243,7 @@ const Header: React.FC = () => {
                                 <p className="text-gray-300 text-lg leading-relaxed">
                                    Печь предназначена для определения содержания битума в асфальтобетоне методом выжигания. Оснащена термостойким корпусом, нагревательной камерой с системой удаления продуктов горения, встроенными весами и сенсорным контроллером для автоматического контроля температуры и массы.
                                 </p>
-                                <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                <a href="bit.html" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                    Перейти в раздел
                                 </a>
                             </div>
