@@ -4,13 +4,20 @@ import { Menu, X, ChevronRight } from 'lucide-react';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<'ind' | 'lab' | 'tun' | 'high' | null>(null);
 
   const toggleCatalog = () => {
+    if (isSolutionsOpen) setIsSolutionsOpen(false);
     setIsCatalogOpen(!isCatalogOpen);
     if (!isCatalogOpen) {
       setActiveCategory(null); // Reset selection when opening
     }
+  };
+
+  const toggleSolutions = () => {
+    if (isCatalogOpen) setIsCatalogOpen(false);
+    setIsSolutionsOpen(!isSolutionsOpen);
   };
 
   return (
@@ -28,7 +35,12 @@ const Header: React.FC = () => {
         >
           Каталог
         </button>
-        <a href="#" className="hidden md:block font-display text-[20px] leading-[28px] uppercase text-white hover:text-gray-300 transition-colors">Решения</a>
+        <button 
+          onClick={toggleSolutions}
+          className={`font-display text-[20px] leading-[28px] uppercase transition-colors px-3 py-2 flex items-center gap-1 ${isSolutionsOpen ? 'text-[#6B809B]' : 'text-white hover:text-gray-300'}`}
+        >
+          Решения
+        </button>
         <a href="#" className="hidden md:block font-display text-[20px] leading-[28px] uppercase text-white hover:text-gray-300 transition-colors">Сервис</a>
         <a href="#" className="hidden md:block font-display text-[20px] leading-[28px] uppercase text-white hover:text-gray-300 transition-colors">О нас</a>
         <a href="#" className="hidden md:block font-display text-[20px] leading-[28px] uppercase text-white hover:text-gray-300 transition-colors">Контакты</a>
@@ -165,6 +177,28 @@ const Header: React.FC = () => {
               </div>
 
            </div>
+        </div>
+      )}
+
+      {/* Solutions Dropdown */}
+      {isSolutionsOpen && (
+        <div className="absolute top-full left-0 w-full bg-black z-40 border-t border-gray-800">
+            <div className="container mx-auto px-4 py-8">
+                <div className="flex flex-col items-start gap-4" style={{ marginLeft: '140px' }}>
+                    <a href="#" className="group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <span className="font-display text-lg md:text-xl text-white tracking-wide uppercase">Комбинированные камерные печи</span>
+                        <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            <ChevronRight size={24} />
+                        </div>
+                    </a>
+                    <a href="#" className="group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        <span className="font-display text-lg md:text-xl text-white tracking-wide uppercase">Печи выжигания битума</span>
+                        <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            <ChevronRight size={24} />
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
       )}
     </header>
