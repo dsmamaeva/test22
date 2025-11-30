@@ -254,19 +254,43 @@
         <!-- Solutions Dropdown (Overlay) -->
         <div id="solutions-dropdown" class="hidden absolute top-full left-0 w-full bg-black border-b border-gray-700 shadow-2xl z-40">
             <div class="container mx-auto px-4 py-8">
-                <div class="flex flex-col items-start gap-4"> 
-                    <a href="#" class="group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                        <span class="font-display text-lg md:text-xl text-white tracking-wide uppercase">Комбинированные камерные печи</span>
-                        <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
-                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
+                    
+                    <!-- Left: Menu Items -->
+                    <div class="flex flex-col items-start gap-4 shrink-0" id="solutions-menu-items">
+                        <a href="#" id="sol-item-combo" class="catalog-menu-link group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                            <span class="font-display text-lg md:text-xl text-white tracking-wide uppercase">Комбинированные камерные печи</span>
+                            <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
+                        <a href="#" id="sol-item-bitumen" class="catalog-menu-link group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                            <span class="font-display text-lg md:text-xl text-white tracking-wide uppercase">Печи выжигания битума</span>
+                            <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Right: Content Details (Initially hidden) -->
+                    <div id="solutions-details" class="flex-grow hidden md:block relative min-h-[350px]">
+                        <!-- Combined Chamber Furnaces Details -->
+                        <div id="details-sol-combo" class="details-sol-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <!-- Image -->
+                            <div class="w-full lg:w-1/2 flex justify-center">
+                                <img src="Img/imglab.png" alt="Комбинированные камерные печи" class="max-w-full h-auto max-h-[300px] object-contain">
+                            </div>
+                            <!-- Text Content -->
+                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p class="text-gray-300 text-lg leading-relaxed">
+                                   Специальное исполнение камерной печи для совмещения процессов сушки и обжига за один цикл.
+                                </p>
+                                <a href="#" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                   Перейти в раздел
+                                </a>
+                            </div>
                         </div>
-                    </a>
-                    <a href="#" class="group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                        <span class="font-display text-lg md:text-xl text-white tracking-wide uppercase">Печи выжигания битума</span>
-                        <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
-                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -707,7 +731,7 @@
             const details = document.querySelectorAll('.details-content');
             details.forEach(detail => detail.classList.add('hidden'));
             
-            const links = document.querySelectorAll('.catalog-menu-link');
+            const links = document.querySelectorAll('#catalog-menu-items .catalog-menu-link');
             links.forEach(link => {
                 link.classList.remove('bg-[#3b4050]');
                 link.classList.add('bg-[#2a2e3a]');
@@ -770,6 +794,45 @@
                 detailsHigh.classList.remove('hidden');
                 activateMenuLink(menuItemHigh);
             });
+        }
+
+        // Solutions Interaction
+        const solItemCombo = document.getElementById('sol-item-combo');
+        const solItemBitumen = document.getElementById('sol-item-bitumen');
+        const detailsSolCombo = document.getElementById('details-sol-combo');
+
+        function hideAllSolDetails() {
+            const details = document.querySelectorAll('.details-sol-content');
+            details.forEach(detail => detail.classList.add('hidden'));
+
+            const links = document.querySelectorAll('#solutions-menu-items .catalog-menu-link');
+            links.forEach(link => {
+                 link.classList.remove('bg-[#3b4050]');
+                 link.classList.add('bg-[#2a2e3a]');
+                 const icon = link.querySelector('.text-white');
+                 if (icon) {
+                    icon.classList.remove('text-white');
+                    icon.classList.add('text-gray-400');
+                 }
+            });
+        }
+
+        if (solItemCombo) {
+            solItemCombo.addEventListener('click', (e) => {
+                e.preventDefault();
+                hideAllSolDetails();
+                if(detailsSolCombo) detailsSolCombo.classList.remove('hidden');
+                activateMenuLink(solItemCombo);
+            });
+        }
+        
+        if (solItemBitumen) {
+             solItemBitumen.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 hideAllSolDetails();
+                 // Add detail for bitumen if needed later
+                 activateMenuLink(solItemBitumen);
+             });
         }
     </script>
 </body>

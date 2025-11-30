@@ -6,6 +6,7 @@ const Header: React.FC = () => {
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<'ind' | 'lab' | 'tun' | 'high' | null>(null);
+  const [activeSolution, setActiveSolution] = useState<'combo' | 'bitumen' | null>(null);
 
   const toggleCatalog = () => {
     if (isSolutionsOpen) setIsSolutionsOpen(false);
@@ -18,6 +19,9 @@ const Header: React.FC = () => {
   const toggleSolutions = () => {
     if (isCatalogOpen) setIsCatalogOpen(false);
     setIsSolutionsOpen(!isSolutionsOpen);
+    if (!isSolutionsOpen) {
+        setActiveSolution(null);
+    }
   };
 
   return (
@@ -183,20 +187,52 @@ const Header: React.FC = () => {
       {/* Solutions Dropdown */}
       {isSolutionsOpen && (
         <div className="absolute top-full left-0 w-full bg-black z-40 border-t border-gray-800">
-            <div className="container mx-auto px-4 py-8">
-                <div className="flex flex-col items-start gap-4">
-                    <a href="#" className="group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                        <span className="font-display text-lg md:text-xl text-white tracking-wide uppercase">Комбинированные камерные печи</span>
-                        <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
+            <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8 min-h-[400px]">
+                {/* Left Sidebar */}
+                <div className="flex flex-col items-start gap-4 w-full lg:w-1/3 border-r border-gray-800 pr-8">
+                    <button 
+                        onClick={() => setActiveSolution('combo')}
+                        className={`group w-full md:w-[400px] h-[80px] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${activeSolution === 'combo' ? 'bg-[#3b4050]' : 'bg-[#2a2e3a]'}`}
+                    >
+                        <span className="font-display text-lg md:text-xl text-white tracking-wide uppercase text-left">Комбинированные камерные печи</span>
+                        <div className={`transition-colors duration-300 ${activeSolution === 'combo' ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
                             <ChevronRight size={24} />
                         </div>
-                    </a>
-                    <a href="#" className="group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
-                        <span className="font-display text-lg md:text-xl text-white tracking-wide uppercase">Печи выжигания битума</span>
-                        <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
+                    </button>
+                    <button 
+                        onClick={() => setActiveSolution('bitumen')}
+                        className={`group w-full md:w-[400px] h-[80px] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 ${activeSolution === 'bitumen' ? 'bg-[#3b4050]' : 'bg-[#2a2e3a]'}`}
+                    >
+                        <span className="font-display text-lg md:text-xl text-white tracking-wide uppercase text-left">Печи выжигания битума</span>
+                        <div className={`transition-colors duration-300 ${activeSolution === 'bitumen' ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
                             <ChevronRight size={24} />
                         </div>
-                    </a>
+                    </button>
+                </div>
+                
+                {/* Right Content */}
+                <div className="w-full lg:w-2/3 relative min-h-[300px]">
+                     {!activeSolution && (
+                        <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-display text-2xl uppercase tracking-widest">
+                            Выберите решение
+                        </div>
+                     )}
+                     
+                     {activeSolution === 'combo' && (
+                        <div className="w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <div className="w-full lg:w-1/2 flex justify-center">
+                                <img src="Img/imglab.png" alt="Комбинированные камерные печи" className="max-w-full h-auto max-h-[300px] object-contain" />
+                            </div>
+                            <div className="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p className="text-gray-300 text-lg leading-relaxed">
+                                   Специальное исполнение камерной печи для совмещения процессов сушки и обжига за один цикл.
+                                </p>
+                                <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                   Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+                     )}
                 </div>
             </div>
         </div>
