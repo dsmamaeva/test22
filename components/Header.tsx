@@ -184,7 +184,7 @@ const Header: React.FC = () => {
       {isSolutionsOpen && (
         <div className="absolute top-full left-0 w-full bg-black z-40 border-t border-gray-800">
             <div className="container mx-auto px-4 py-8">
-                <div className="flex flex-col items-start gap-4" style={{ marginLeft: '140px' }}>
+                <div className="flex flex-col items-start gap-4">
                     <a href="#" className="group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
                         <span className="font-display text-lg md:text-xl text-white tracking-wide uppercase">Комбинированные камерные печи</span>
                         <div className="text-gray-400 group-hover:text-white transition-colors duration-300">
