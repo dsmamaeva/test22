@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVT - Печи выжигания битума</title>
+    <title>AVT - Контакты</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Скрипт иконок Lucide -->
@@ -111,8 +111,8 @@
         <!-- Catalog Dropdown (Overlay) -->
         <div id="catalog-dropdown" class="hidden absolute top-full left-0 w-full bg-black border-b border-gray-700 shadow-2xl z-40">
             <div class="container mx-auto px-4 py-8">
+                <!-- Flex container for Menu Items (Left) and Content Panel (Right) -->
                 <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
-                    
                     <!-- Left: Menu Items -->
                     <div class="flex flex-col items-start gap-4 shrink-0" id="catalog-menu-items">
                         <a href="lab.html" class="catalog-menu-link group w-full md:w-[300px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
@@ -140,8 +140,7 @@
                             </div>
                         </a>
                     </div>
-                    
-                    <!-- Right: Content Details (Initially hidden) -->
+                    <!-- Right: Content Details (Initially hidden, shown on interaction) -->
                     <div id="catalog-details" class="flex-grow hidden md:block relative min-h-[350px]">
                         <div class="absolute inset-0 flex items-center justify-center text-gray-500 font-display text-2xl uppercase tracking-widest">
                             Выберите категорию
@@ -239,44 +238,49 @@
     <!-- Main Content -->
     <main class="flex-grow pt-10 pb-20">
         <div class="container mx-auto px-4">
-             <!-- Flex Container -->
-             <div class="flex flex-col lg:flex-row gap-8 items-start mb-20">
-                 <!-- Description (Left) -->
-                 <div class="w-full lg:w-7/12 text-gray-200">
-                      <h1 class="font-display text-4xl md:text-5xl uppercase mb-6 text-white tracking-wide">ПЕЧИ ВЫЖИГАНИЯ БИТУМА</h1>
-                      
-                      <p class="mb-6 leading-relaxed text-gray-300 text-lg">
-                          Печь предназначена для определения содержания битума в асфальтобетонной смеси методом выжигания. 
-                          Имеет металлический корпус с термостойкой порошковой краской, камеру с нагревателями и системой 
-                          удаления продуктов горения. Встроенные весы и контроллер с сенсорным дисплеем обеспечивают 
-                          автоматический контроль температуры и массы. Работа возможна по времени или до достижения 
-                          заданного изменения массы.
-                      </p>
+            <!-- Title & Subtitle -->
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 border-b border-gray-700 pb-8">
+                <h1 class="font-display text-6xl md:text-8xl text-white tracking-wide uppercase">КОНТАКТЫ</h1>
+                <div class="mt-6 lg:mt-0 text-right text-gray-300 font-display text-xl tracking-wide uppercase">
+                    <p>ИП ПОЛЯНСКИХ СТАНИСЛАВ СЕРГЕЕВИЧ</p>
+                    <p>ИНН 143527138008 / ОГРНИП 325140000057547</p>
+                </div>
+            </div>
 
-                      <h2 class="font-display text-2xl uppercase mb-4 text-white tracking-wide">ОСНОВНЫЕ ВОЗМОЖНОСТИ:</h2>
-                      <ul class="list-disc pl-5 mb-8 space-y-2 text-gray-300 marker:text-gray-500">
-                          <li>Управление осуществляется через сенсорный дисплей с предустановленным программным обеспечением на русском языке (по запросу доступны и другие языки).</li>
-                          <li>Камера выполнена из нержавеющей стали.</li>
-                          <li>Надежные нагревательные элементы диаметром 8 мм, устойчивые к механическим воздействиям, расположены по бокам и в нижней части камеры.</li>
-                          <li>Встроенные весы обеспечивают непрерывное измерение массы образца.</li>
-                          <li>Автоматический режим выжигания позволяет выполнять расчет процентного содержания битума в образце.</li>
-                          <li>Конструкция предусматривает легкую замену нагревательных элементов без необходимости демонтажа теплоизоляции.</li>
-                      </ul>
-                 </div>
+            <!-- Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Col 1 -->
+                <div>
+                    <h2 class="font-display text-4xl mb-6 text-white uppercase tracking-wide">АДРЕС</h2>
+                    <p class="font-display text-2xl text-white uppercase mb-2">ЛЕНИНГРАДСКАЯ ОБЛАСТЬ,</p>
+                    <p class="font-display text-2xl text-white uppercase">ПРОМЗОНА ПЕСКИ</p>
+                </div>
 
-                 <!-- Images (Right) -->
-                 <div class="w-full lg:w-5/12 flex flex-col gap-6">
-                      <div class="grid grid-cols-2 gap-4">
-                          <!-- Using placeholder images -->
-                          <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
-                              <img src="Img/imglab.png" alt="Печь выжигания битума - внешний вид" class="w-full h-full object-cover">
-                          </div>
-                          <div class="aspect-[3/4] overflow-hidden rounded shadow-lg border border-gray-700">
-                              <img src="Img/imglab.png" alt="Печь выжигания битума - камера" class="w-full h-full object-cover">
-                          </div>
-                      </div>
-                 </div>
-             </div>
+                <!-- Col 2 -->
+                <div>
+                    <div class="mb-12">
+                        <h2 class="font-display text-4xl mb-6 text-white uppercase tracking-wide">ТЕЛЕФОН</h2>
+                        <p class="font-display text-2xl text-white uppercase">8 (962) 688-99-66</p>
+                    </div>
+                    <div>
+                        <h2 class="font-display text-4xl mb-6 text-white uppercase tracking-wide">E-MAIL</h2>
+                        <p class="font-display text-2xl text-white uppercase">ME@SPOLYANSKIKH.RU</p>
+                    </div>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h2 class="font-display text-4xl mb-6 text-white uppercase tracking-wide">МЕССЕНДЖЕРЫ</h2>
+                    <div class="flex gap-6">
+                        <a href="#" class="w-20 h-20 bg-black border border-gray-600 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors group">
+                            <i data-lucide="send" class="w-8 h-8 text-gray-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="w-20 h-20 bg-black border border-gray-600 rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors group">
+                            <i data-lucide="message-circle" class="w-8 h-8 text-gray-400 group-hover:text-white transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -370,7 +374,7 @@
                 }
             });
         }
-
+        
         // Toggle mobile catalog submenu
         const mobileCatalogBtn = document.getElementById('mobile-catalog-btn');
         const mobileCatalogSubmenu = document.getElementById('mobile-catalog-submenu');
@@ -482,18 +486,14 @@
         if (solItemCombo) {
             solItemCombo.addEventListener('click', (e) => {
                 e.preventDefault();
-                hideAllSolDetails();
-                if(detailsSolCombo) detailsSolCombo.classList.remove('hidden');
-                activateMenuLink(solItemCombo);
+                window.location.href = 'komb.html';
             });
         }
         
         if (solItemBitumen) {
              solItemBitumen.addEventListener('click', (e) => {
                  e.preventDefault();
-                 hideAllSolDetails();
-                 if (detailsSolBitumen) detailsSolBitumen.classList.remove('hidden');
-                 activateMenuLink(solItemBitumen);
+                 window.location.href = 'bit.html';
              });
         }
     </script>
