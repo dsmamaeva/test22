@@ -233,6 +233,22 @@ const Header: React.FC = () => {
                             </div>
                         </div>
                      )}
+
+                     {activeSolution === 'bitumen' && (
+                        <div className="w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <div className="w-full lg:w-1/2 flex justify-center">
+                                <img src="Img/imglab.png" alt="Печи выжигания битума" className="max-w-full h-auto max-h-[300px] object-contain" />
+                            </div>
+                            <div className="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p className="text-gray-300 text-lg leading-relaxed">
+                                   Печь предназначена для определения содержания битума в асфальтобетоне методом выжигания. Оснащена термостойким корпусом, нагревательной камерой с системой удаления продуктов горения, встроенными весами и сенсорным контроллером для автоматического контроля температуры и массы.
+                                </p>
+                                <a href="#" className="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                   Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+                     )}
                 </div>
             </div>
         </div>

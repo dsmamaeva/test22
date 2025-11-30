@@ -290,6 +290,24 @@
                                 </a>
                             </div>
                         </div>
+
+                        <!-- Bitumen Burnout Furnaces Details -->
+                        <div id="details-sol-bitumen" class="details-sol-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <!-- Image -->
+                            <div class="w-full lg:w-1/2 flex justify-center">
+                                <img src="Img/imglab.png" alt="Печи выжигания битума" class="max-w-full h-auto max-h-[300px] object-contain">
+                            </div>
+                            <!-- Text Content -->
+                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p class="text-gray-300 text-lg leading-relaxed">
+                                   Печь предназначена для определения содержания битума в асфальтобетоне методом выжигания. Оснащена термостойким корпусом, нагревательной камерой с системой удаления продуктов горения, встроенными весами и сенсорным контроллером для автоматического контроля температуры и массы.
+                                </p>
+                                <a href="#" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                   Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -800,6 +818,7 @@
         const solItemCombo = document.getElementById('sol-item-combo');
         const solItemBitumen = document.getElementById('sol-item-bitumen');
         const detailsSolCombo = document.getElementById('details-sol-combo');
+        const detailsSolBitumen = document.getElementById('details-sol-bitumen');
 
         function hideAllSolDetails() {
             const details = document.querySelectorAll('.details-sol-content');
@@ -830,7 +849,7 @@
              solItemBitumen.addEventListener('click', (e) => {
                  e.preventDefault();
                  hideAllSolDetails();
-                 // Add detail for bitumen if needed later
+                 if (detailsSolBitumen) detailsSolBitumen.classList.remove('hidden');
                  activateMenuLink(solItemBitumen);
              });
         }
