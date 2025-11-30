@@ -46,7 +46,7 @@ const Header: React.FC = () => {
           Решения
         </button>
         <a href="servis.html" className="hidden md:block font-display text-[20px] leading-[28px] uppercase text-white hover:text-gray-300 transition-colors">Сервис</a>
-        <a href="#" className="hidden md:block font-display text-[20px] leading-[28px] uppercase text-white hover:text-gray-300 transition-colors">О нас</a>
+        <a href="about.html" className="hidden md:block font-display text-[20px] leading-[28px] uppercase text-white hover:text-gray-300 transition-colors">О нас</a>
         <a href="#" className="hidden md:block font-display text-[20px] leading-[28px] uppercase text-white hover:text-gray-300 transition-colors">Контакты</a>
       </nav>
 
