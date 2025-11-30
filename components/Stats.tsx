@@ -9,16 +9,16 @@ const Stats: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between">
         
         <div className="flex flex-col items-start mb-12 lg:mb-0 lg:w-1/2">
-           <div className="flex items-baseline gap-4">
-              <span className="font-display text-[120px] md:text-[180px] leading-none font-bold text-gray-900">
+           <div className="flex items-end gap-4">
+              <div className="flex flex-col items-end">
+                 <span className="text-xl md:text-2xl font-bold uppercase tracking-widest text-gray-500 mb-1 md:mb-2 text-right w-full">Реализовали</span>
+                 <span className="font-display text-5xl md:text-6xl uppercase text-right leading-none">Более</span>
+              </div>
+              <span className="font-display text-[120px] md:text-[180px] leading-[0.75] font-bold text-gray-900">
                 10
               </span>
-              <div className="flex flex-col">
-                 <span className="text-xl font-bold uppercase tracking-widest text-gray-500 mb-2">Реализовали</span>
-                 <span className="font-display text-5xl md:text-6xl uppercase">Более</span>
-              </div>
            </div>
-           <div className="mt-4 pl-4 border-l-8 border-gray-900">
+           <div className="mt-4 pl-4 border-l-8 border-gray-900 w-full text-left">
               <span className="block font-display text-5xl md:text-7xl uppercase text-gray-800">индивидуальных</span>
               <span className="block font-display text-5xl md:text-7xl uppercase text-gray-800">проектов</span>
            </div>
