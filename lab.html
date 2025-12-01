@@ -310,7 +310,17 @@
                      <a href="vtemp.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Высокотемпературные печи</a>
                 </div>
 
-                <a href="index.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Решения</a>
+                <!-- Mobile Solutions (Now a Dropdown) -->
+                <button id="mobile-solutions-btn" class="w-full text-left text-white bg-gray-900 block px-3 py-2 rounded-md text-xl font-display tracking-wider flex justify-between items-center">
+                    Решения
+                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                </button>
+                <!-- Mobile Solutions Submenu -->
+                <div id="mobile-solutions-submenu" class="hidden pl-4 space-y-2 py-2 bg-gray-900/50 rounded-md mt-1">
+                     <a href="komb.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Комбинированные камерные печи</a>
+                     <a href="bit.html" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-lg font-display">Печи выжигания битума</a>
+                </div>
+
                 <a href="servis.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Сервис</a>
                 <a href="about.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">О нас</a>
                 <a href="contacts.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-xl font-display tracking-wider">Контакты</a>
@@ -517,6 +527,15 @@
         if (mobileCatalogBtn && mobileCatalogSubmenu) {
             mobileCatalogBtn.addEventListener('click', () => {
                  mobileCatalogSubmenu.classList.toggle('hidden');
+            });
+        }
+
+        // Toggle mobile solutions submenu (NEW)
+        const mobileSolutionsBtn = document.getElementById('mobile-solutions-btn');
+        const mobileSolutionsSubmenu = document.getElementById('mobile-solutions-submenu');
+        if (mobileSolutionsBtn && mobileSolutionsSubmenu) {
+            mobileSolutionsBtn.addEventListener('click', () => {
+                 mobileSolutionsSubmenu.classList.toggle('hidden');
             });
         }
 
