@@ -83,11 +83,16 @@
                 <!-- Desktop Nav -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
+                        <!-- Catalog Button (Toggles Dropdown) -->
                         <button id="catalog-btn" class="font-display text-xl tracking-wider text-white hover:text-gray-300 px-3 py-2 rounded-md transition-colors flex items-center gap-2">
                             Каталог
                         </button>
                         
-                        <a href="index.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Решения</a>
+                        <!-- Solutions Button (Toggles Dropdown) -->
+                        <button id="solutions-btn" class="font-display text-xl tracking-wider text-white hover:text-gray-300 px-3 py-2 rounded-md transition-colors flex items-center gap-2">
+                            Решения
+                        </button>
+
                         <a href="servis.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Сервис</a>
                         <a href="about.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">О нас</a>
                         <a href="contacts.html" class="font-display text-xl tracking-wider hover:text-gray-300 transition-colors px-3 py-2 rounded-md">Контакты</a>
@@ -213,6 +218,68 @@
                                 </p>
                                 <a href="vtemp.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
                                     Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solutions Dropdown (Overlay) -->
+        <div id="solutions-dropdown" class="hidden absolute top-full left-0 w-full bg-black border-b border-gray-700 shadow-2xl z-40">
+            <div class="container mx-auto px-4 py-8">
+                <div class="flex flex-col md:flex-row gap-8 lg:gap-16">
+                    
+                    <!-- Left: Menu Items -->
+                    <div class="flex flex-col items-start gap-4 shrink-0" id="solutions-menu-items">
+                        <a href="komb.html" id="sol-item-combo" class="catalog-menu-link group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                            <span class="font-display text-lg md:text-xl text-white tracking-wide uppercase">Комбинированные камерные печи</span>
+                            <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
+                        <a href="bit.html" id="sol-item-bitumen" class="catalog-menu-link group w-full md:w-[400px] h-[80px] bg-[#2a2e3a] border border-gray-700 hover:border-gray-500 flex items-center justify-between px-6 rounded hover:bg-[#3b4050] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                            <span class="font-display text-lg md:text-xl text-white tracking-wide uppercase">Печи выжигания битума</span>
+                            <div class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Right: Content Details (Initially hidden) -->
+                    <div id="solutions-details" class="flex-grow hidden md:block relative min-h-[350px]">
+                        <!-- Combined Chamber Furnaces Details -->
+                        <div id="details-sol-combo" class="details-sol-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <!-- Image -->
+                            <div class="w-full lg:w-1/2 flex justify-center">
+                                <img src="Img/imglab.png" alt="Комбинированные камерные печи" class="max-w-full h-auto max-h-[300px] object-contain">
+                            </div>
+                            <!-- Text Content -->
+                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p class="text-gray-300 text-lg leading-relaxed">
+                                   Специальное исполнение камерной печи для совмещения процессов сушки и обжига за один цикл.
+                                </p>
+                                <a href="komb.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                   Перейти в раздел
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Bitumen Burnout Furnaces Details -->
+                        <div id="details-sol-bitumen" class="details-sol-content hidden absolute inset-0 w-full h-full flex flex-col lg:flex-row items-center gap-8 animate-fade-in">
+                            <!-- Image -->
+                            <div class="w-full lg:w-1/2 flex justify-center">
+                                <img src="Img/imglab.png" alt="Печи выжигания битума" class="max-w-full h-auto max-h-[300px] object-contain">
+                            </div>
+                            <!-- Text Content -->
+                            <div class="w-full lg:w-1/2 flex flex-col gap-6 text-left">
+                                <p class="text-gray-300 text-lg leading-relaxed">
+                                   Печь предназначена для определения содержания битума в асфальтобетоне методом выжигания. Оснащена термостойким корпусом, нагревательной камерой с системой удаления продуктов горения, встроенными весами и сенсорным контроллером для автоматического контроля температуры и массы.
+                                </p>
+                                <a href="bit.html" class="inline-block text-center bg-[#6B809B] hover:bg-[#5a6e87] text-white font-display text-xl uppercase tracking-wider py-4 px-8 rounded transition-colors w-full lg:w-auto shadow-lg">
+                                   Перейти в раздел
                                 </a>
                             </div>
                         </div>
@@ -488,51 +555,6 @@
         </div>
     </main>
 
-    <!-- Contact Form (Reused) -->
-    <section class="relative w-full py-20 overflow-hidden mt-auto">
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="Img/back.png" alt="" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/50"></div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto bg-black/40 backdrop-blur-sm border border-gray-700 p-8 md:p-12 rounded-2xl shadow-2xl">
-              
-              <div class="text-center mb-10">
-                <h2 class="font-display text-4xl md:text-5xl mb-4 text-white">Остались вопросы?</h2>
-                <p class="text-gray-400 md:text-lg max-w-2xl mx-auto">
-                  Вы можете быстро получить консультацию. Для этого напишите на почту <a href="mailto:stanislavpolyanskikh@yandex.ru" class="text-white underline hover:text-gray-300">stanislavpolyanskikh@yandex.ru</a> или свяжитесь через форму обратной связи.
-                </p>
-              </div>
-
-              <form class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="space-y-2">
-                    <label for="name" class="block font-display text-xl uppercase text-gray-300">имя *</label>
-                    <input type="text" id="name" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md" placeholder="Ваше имя">
-                  </div>
-                  <div class="space-y-2">
-                    <label for="phone" class="block font-display text-xl uppercase text-gray-300">Номер телефона *</label>
-                    <input type="tel" id="phone" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md" placeholder="+7 (___) ___-__-__">
-                  </div>
-                </div>
-
-                <div class="space-y-2">
-                  <label for="message" class="block font-display text-xl uppercase text-gray-300">Ваш вопрос*</label>
-                  <textarea id="message" rows="4" class="w-full bg-white/5 border border-gray-600 rounded p-4 text-white focus:border-white focus:ring-1 focus:ring-white transition outline-none backdrop-blur-md resize-none" placeholder="Опишите вашу задачу..."></textarea>
-                </div>
-
-                <div class="flex justify-center pt-4">
-                  <button type="submit" class="w-full md:w-auto px-12 py-4 bg-gray-700 hover:bg-gray-600 text-white font-display text-xl uppercase tracking-widest rounded transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    Задать вопрос
-                  </button>
-                </div>
-              </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer (Reused) -->
     <footer class="bg-black py-8 text-center text-gray-600 text-sm">
         <div class="container mx-auto px-4">
@@ -541,13 +563,32 @@
     </footer>
 
     <script>
+        // Initialize Lucide icons
         lucide.createIcons();
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle Logic
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const iconOpen = document.getElementById('icon-menu');
         const iconClose = document.getElementById('icon-close');
+        
+        // Desktop Dropdown Logic
+        const catalogBtn = document.getElementById('catalog-btn');
+        const catalogDropdown = document.getElementById('catalog-dropdown');
+        
+        // Solutions Dropdown Logic
+        const solutionsBtn = document.getElementById('solutions-btn');
+        const solutionsDropdown = document.getElementById('solutions-dropdown');
+
+        // Items logic
+        const menuItemLab = document.getElementById('menu-item-lab');
+        const detailsLab = document.getElementById('details-lab');
+        const menuItemInd = document.getElementById('menu-item-ind');
+        const detailsInd = document.getElementById('details-ind');
+        const menuItemTun = document.getElementById('menu-item-tun');
+        const detailsTun = document.getElementById('details-tun');
+        const menuItemHigh = document.getElementById('menu-item-high');
+        const detailsHigh = document.getElementById('details-high');
 
         if (btn && menu) {
             btn.addEventListener('click', () => {
@@ -563,7 +604,7 @@
                 }
             });
         }
-        
+
         // Toggle mobile catalog submenu
         const mobileCatalogBtn = document.getElementById('mobile-catalog-btn');
         const mobileCatalogSubmenu = document.getElementById('mobile-catalog-submenu');
@@ -572,16 +613,21 @@
                  mobileCatalogSubmenu.classList.toggle('hidden');
             });
         }
-        
-        // Desktop Dropdown Logic
-        const catalogBtn = document.getElementById('catalog-btn');
-        const catalogDropdown = document.getElementById('catalog-dropdown');
-        
+
         // Catalog Button Logic
         if (catalogBtn && catalogDropdown) {
              catalogBtn.addEventListener('click', (e) => {
                  e.stopPropagation();
                  
+                 // Close solutions if open
+                 if (solutionsDropdown && !solutionsDropdown.classList.contains('hidden')) {
+                     solutionsDropdown.classList.add('hidden');
+                     if (solutionsBtn) {
+                         solutionsBtn.classList.remove('text-[#6B809B]');
+                         solutionsBtn.classList.add('text-white', 'hover:text-gray-300');
+                     }
+                 }
+
                  const isHidden = catalogDropdown.classList.contains('hidden');
                  if (isHidden) {
                      catalogDropdown.classList.remove('hidden');
@@ -596,6 +642,35 @@
                  }
              });
         }
+        
+        // Solutions Button Logic
+        if (solutionsBtn && solutionsDropdown) {
+             solutionsBtn.addEventListener('click', (e) => {
+                 e.stopPropagation();
+                 
+                 // Close catalog if open
+                 if (catalogDropdown && !catalogDropdown.classList.contains('hidden')) {
+                     catalogDropdown.classList.add('hidden');
+                     if (catalogBtn) {
+                         catalogBtn.classList.remove('text-[#6B809B]');
+                         catalogBtn.classList.add('text-white', 'hover:text-gray-300');
+                     }
+                 }
+
+                 const isHidden = solutionsDropdown.classList.contains('hidden');
+                 if (isHidden) {
+                     solutionsDropdown.classList.remove('hidden');
+                     // Active state
+                     solutionsBtn.classList.remove('text-white', 'hover:text-gray-300');
+                     solutionsBtn.classList.add('text-[#6B809B]');
+                 } else {
+                     solutionsDropdown.classList.add('hidden');
+                     // Inactive state
+                     solutionsBtn.classList.remove('text-[#6B809B]');
+                     solutionsBtn.classList.add('text-white', 'hover:text-gray-300');
+                 }
+             });
+        }
 
         // Close dropdowns on click outside
         document.addEventListener('click', (e) => {
@@ -605,8 +680,14 @@
                  catalogBtn.classList.remove('text-[#6B809B]');
                  catalogBtn.classList.add('text-white', 'hover:text-gray-300');
              }
+             // Close solutions
+             if (solutionsDropdown && !solutionsDropdown.contains(e.target) && solutionsBtn && !solutionsBtn.contains(e.target)) {
+                 solutionsDropdown.classList.add('hidden');
+                 solutionsBtn.classList.remove('text-[#6B809B]');
+                 solutionsBtn.classList.add('text-white', 'hover:text-gray-300');
+             }
         });
-        
+
         // Helpers to manage details
         function hideAllDetails() {
             const details = document.querySelectorAll('.details-content');
@@ -636,15 +717,6 @@
                 iconDiv.classList.add('text-white');
             }
         }
-
-        const menuItemLab = document.getElementById('menu-item-lab');
-        const detailsLab = document.getElementById('details-lab');
-        const menuItemInd = document.getElementById('menu-item-ind');
-        const detailsInd = document.getElementById('details-ind');
-        const menuItemTun = document.getElementById('menu-item-tun');
-        const detailsTun = document.getElementById('details-tun');
-        const menuItemHigh = document.getElementById('menu-item-high');
-        const detailsHigh = document.getElementById('details-high');
 
         // Handle interaction with Laboratory Ovens item
         if (menuItemLab && detailsLab) {
@@ -684,6 +756,46 @@
                 detailsHigh.classList.remove('hidden');
                 activateMenuLink(menuItemHigh);
             });
+        }
+
+        // Solutions Interaction
+        const solItemCombo = document.getElementById('sol-item-combo');
+        const solItemBitumen = document.getElementById('sol-item-bitumen');
+        const detailsSolCombo = document.getElementById('details-sol-combo');
+        const detailsSolBitumen = document.getElementById('details-sol-bitumen');
+
+        function hideAllSolDetails() {
+            const details = document.querySelectorAll('.details-sol-content');
+            details.forEach(detail => detail.classList.add('hidden'));
+
+            const links = document.querySelectorAll('#solutions-menu-items .catalog-menu-link');
+            links.forEach(link => {
+                 link.classList.remove('bg-[#3b4050]');
+                 link.classList.add('bg-[#2a2e3a]');
+                 const icon = link.querySelector('.text-white');
+                 if (icon) {
+                    icon.classList.remove('text-white');
+                    icon.classList.add('text-gray-400');
+                 }
+            });
+        }
+
+        if (solItemCombo) {
+            solItemCombo.addEventListener('click', (e) => {
+                e.preventDefault();
+                hideAllSolDetails();
+                if(detailsSolCombo) detailsSolCombo.classList.remove('hidden');
+                activateMenuLink(solItemCombo);
+            });
+        }
+        
+        if (solItemBitumen) {
+             solItemBitumen.addEventListener('click', (e) => {
+                 e.preventDefault();
+                 hideAllSolDetails();
+                 if (detailsSolBitumen) detailsSolBitumen.classList.remove('hidden');
+                 activateMenuLink(solItemBitumen);
+             });
         }
     </script>
 </body>
